@@ -13,17 +13,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author SENA
  */
+
 @WebServlet(name = "ServletAnimal", urlPatterns = {"/ServletAnimal"})
+@MultipartConfig
 public class ServletAnimal extends HttpServlet {
 
     /**
@@ -39,8 +43,9 @@ public class ServletAnimal extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        if (request.getParameter("boton3")!=null) {
+       
+        if (request.getParameter("inganimal")!=null) {
+             JOptionPane.showMessageDialog(null,"rios");
         this.IngresarAnimal(request, response);
         }       
     }
@@ -62,7 +67,7 @@ public class ServletAnimal extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=nomb+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\GitHub\\PettApp\\PettApp\\web\\Administrador\\FotosAnimal\\"+nombre;
+          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal\\"+nombre;
           
           String Url2="FotosAnimal/"+nombre;
           

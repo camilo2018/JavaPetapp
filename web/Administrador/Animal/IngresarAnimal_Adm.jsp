@@ -55,7 +55,7 @@
     <label>Color</label><input type="text" name="color" required="" class="form-control">
     <label>Foto</label><input id="inp" type="file" name="IMG" >
       <div class="form-group" id="bot">
-      <input type="submit" name="boton3" value="Registrar Animal" class="btn btn-primary">
+      <input type="submit" name="inganimal" value="Registrar Animal" class="btn btn-primary">
       </div>
     </form>
 </div>
