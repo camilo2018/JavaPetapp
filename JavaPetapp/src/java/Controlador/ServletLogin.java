@@ -74,7 +74,7 @@ public class ServletLogin extends HttpServlet {
         if((u.equals(us)) && (c.equals(co))){
             if(r==1){
             JOptionPane.showMessageDialog(null,"Administrador");
-            response.sendRedirect("Login/probando.jsp");
+            response.sendRedirect("Administrador/Menu/Administrador.jsp");
             }
             else if(r==2){
             JOptionPane.showMessageDialog(null, "Funcionario");
