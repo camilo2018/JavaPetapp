@@ -45,7 +45,7 @@ public class ServletAnimal extends HttpServlet {
         PrintWriter out = response.getWriter();
        
         if (request.getParameter("inganimal")!=null) {
-             JOptionPane.showMessageDialog(null,"rios");
+        
         this.IngresarAnimal(request, response);
         }       
     }
@@ -69,7 +69,7 @@ public class ServletAnimal extends HttpServlet {
           
           String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal\\"+nombre;
           
-          String Url2="FotosAnimal/"+nombre;
+          String Url2=nombre;
           
           InputStream file=foto.getInputStream();
           File f=new File(Url);

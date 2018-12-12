@@ -72,7 +72,8 @@
                         <th><%=cgsc.getRaz()%></th>
                         </tr>
                         <th>Foto</th>
-                        <th><img src="../<%=cgsc.getTam()%>" width="100" height="100"></th>
+                      
+                        <th><img src="../../Uploads/FotosAnimal/<%=cgsc.getTam()%>" width="100" height="100"></th>
                         </tr>
                         <th>Tamaño</th>
                         <th><%=cgsc.getGen()%></th>
