@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Modelo.Login.GSLogin;
+import Modelo.Login.Login;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -49,11 +51,11 @@ public class ServletLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        PrintWriter out = response.getWriter();
-       /*
+     
       String us,co;
         us=request.getParameter("Usuario");
         co=request.getParameter("Clave");
-        GSLogin in = new GSLogin(us, co);
+         GSLogin in = new GSLogin(us, co);
         Login log = new Login();
         ArrayList<GSLogin> arreglo = new ArrayList<>();
         
@@ -63,7 +65,7 @@ public class ServletLogin extends HttpServlet {
             
             for (int i = 0; i < arreglo.size() ; i++) {
                 in=arreglo.get(i);
-                u=in.getUsu();
+                u=in.getUsua();
                 c=in.getCla();
                 r=in.getRol();
 
@@ -72,7 +74,7 @@ public class ServletLogin extends HttpServlet {
         if((u.equals(us)) && (c.equals(co))){
             if(r==1){
             JOptionPane.showMessageDialog(null,"Administrador");
-            response.sendRedirect("Administrador/Menu/Administrador.jsp");
+            response.sendRedirect("Login/probando.jsp");
             }
             else if(r==2){
             JOptionPane.showMessageDialog(null, "Funcionario");
@@ -94,7 +96,7 @@ public class ServletLogin extends HttpServlet {
             response.sendRedirect("Login/registro.jsp");
         }
         }
-       */
+    
        
     } // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

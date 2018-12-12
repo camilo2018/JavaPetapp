@@ -17,6 +17,11 @@ public int rol;
         this.rol = rol;
     }
 
+    public GSLogin(String usua, String cla) {
+        this.usua = usua;
+        this.cla = cla;
+    }
+
     public String getUsua() {
         return usua;
     }
