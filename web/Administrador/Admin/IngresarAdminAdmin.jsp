@@ -12,7 +12,7 @@
 
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="Screen" href="../../../PettApp/Administrador/Admin/CSS/Estilo.css" >
+  <link rel="stylesheet" media="Screen" href="../../../PettAppJ/Administrador/Admin/CSS/Estilo.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -24,7 +24,7 @@
 <body id="fondox">
 
 
-    <form action="../../../PettApp2/Administrador/Admin/Consultar_Admin.jsp">
+    <form action="../../../PettAppJ/Administrador/Admin/Consultar_Admin.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
     

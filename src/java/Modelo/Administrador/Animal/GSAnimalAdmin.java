@@ -35,6 +35,18 @@ public class GSAnimalAdmin {
         this.fot = fot;
     }
 
+    public GSAnimalAdmin(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col) {
+        this.cod = cod;
+        this.nom = nom;
+        this.tip = tip;
+        this.eda = eda;
+        this.raz = raz;
+        this.tam = tam;
+        this.gen = gen;
+        this.col = col;
+    }
+    
+
     public GSAnimalAdmin() {
     }
 
