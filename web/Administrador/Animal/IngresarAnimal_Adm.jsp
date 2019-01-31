@@ -24,7 +24,7 @@
 <body id="fondox">
 
 
-    <form action="../../PettAppJ/Administrador/Animal/Consultar_Animal.jsp" >
+    <form action="../PettAppJ/Administrador/Animal/Consultar_Animal.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">

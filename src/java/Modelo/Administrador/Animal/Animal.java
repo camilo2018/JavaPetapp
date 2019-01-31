@@ -33,6 +33,8 @@ public class Animal {
         }
     }
     
+   
+    
     public ArrayList<GSAnimalAdmin> Consultar(){
     ArrayList<GSAnimalAdmin> R = new ArrayList<>();
         try {
