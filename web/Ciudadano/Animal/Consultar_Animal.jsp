@@ -1,27 +1,30 @@
 <%-- 
     Document   : Consultar_Animal
-    Created on : 23/11/2018, 09:04:47 AM
+    Created on : 23/11/2018, 08:29:03 AM
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Animal.Animal"%>
+<%@page import="Modelo.Administrador.Animal.GSAnimalAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-       <title>Animal</title>
+      <title>Animal</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/EstiloIngresoAnimal.css">
+        <link rel="stylesheet" href="../../../PettAppJ/Animal/CSS/Estilo.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   	<script src="JQ/jquery-3.3.1.min.js"></script>
         <script src="JQ/main.js"></script>
         
 </head>
     <body>
-     
-	<form action="../Ciudadano/Menu/Ciudadano.jsp">
+       
+	<form action="../../Ciudadano/Ciudadano/Menu/Ciudadano.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
-  	</form>         
+  	</form>
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Animal</h3>
     	        <%
@@ -45,6 +48,15 @@
                 
                 <div class="caja2">
                     <table class="table">
+                        <form method='POST' action='../Postulacion/IngresarPostulacionAdmin_1.jsp'>
+                        <input type='hidden' name='code' value='<%=cgsc.getCod()%>'>
+                  <input type='image' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
+                  <h1>Adoptame</h1>
+                
+                </form>
+                        <tr>
+                        <th><img src="../../Uploads/FotosAnimal/<%=cgsc.getTam()%>" width="100" height="100"></th>
+                        </tr>
                         <tr>
                         <th>Codigo</th>
                         <th><%=cgsc.getCod()%></th>
@@ -65,9 +77,8 @@
                         <th>Raza</th>
                         <th><%=cgsc.getRaz()%></th>
                         </tr>
-                        <th>Foto</th>
-                        <th><img src="../<%=cgsc.getTam()%>" width="100" height="100"></th>
-                        </tr>
+                        <tr>
+
                         <th>Tamaño</th>
                         <th><%=cgsc.getGen()%></th>
                         </tr>
@@ -79,21 +90,7 @@
                         </tr> 
                         
                         
-               <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
-                </form>
-            
-                <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
-                </form>
-                            <form method="POST" action="../Postulacion/IngresarPostulacionAdmin.jsp">
-                            <input type='hidden' name='xp' value='<%=cgsc.getCod()%>'>
-                  <input type="image" name="readop" src="Imagenes/adoptame.png" class="img-responsive slideanim" id="logoadopta"  >
-                  <h1>Adoptame</h1>
-                
-                </form>
+              
                 
                 
                 </table>
