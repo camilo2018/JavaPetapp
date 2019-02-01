@@ -131,7 +131,7 @@ private int r;
         }
         else{
             out.print("Usted no es un Usuario Registrado");
-            response.sendRedirect("Login/registro.jsp");
+            response.sendRedirect("Login/inicio.jsp");
         }
         }
         }

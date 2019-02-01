@@ -67,7 +67,7 @@ public class ServletAnimal extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=nomb+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal\\"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal/"+nombre;
           
           String Url2=nombre;
           

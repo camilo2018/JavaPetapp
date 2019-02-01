@@ -1,17 +1,19 @@
-package Modelo.UsuarioCiudadano;
+package Modelo.Usuario;
 
-public class GSAdminCiud {
+public class GSUsuario {
     private String nom;
     private String cla;
     private int rol;
+    private String fot;
 
-    public GSAdminCiud(String nom, String cla, int rol) {
+    public GSUsuario(String nom, String cla, int rol, String fot) {
         this.nom = nom;
         this.cla = cla;
         this.rol = rol;
+        this.fot = fot;
     }
 
-    public GSAdminCiud() {
+    public GSUsuario() {
     }
 
     public String getNom() {
@@ -37,5 +39,14 @@ public class GSAdminCiud {
     public void setRol(int rol) {
         this.rol = rol;
     }
+
+    public String getFot() {
+        return fot;
+    }
+
+    public void setFot(String fot) {
+        this.fot = fot;
+    }
+
     
 }

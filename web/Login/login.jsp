@@ -38,7 +38,7 @@
 		<li><a href="registro.jsp">Adopta</a></li>
 		<li><a href="Galeria.jsp">Galeria</a></li>
 		<li><a href="#">Contacto</a></li>
-		<li><a href="registro.jsp">Login</a></li>
+		<li><a href="inicio.jsp">Login</a></li>
 </ul>
 	</nav>
 </div>
