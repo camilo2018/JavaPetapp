@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import javax.servlet.http.Part;
  *
  * @author SENA
  */
+@MultipartConfig
 @WebServlet(name = "ServletDenuncia", urlPatterns = {"/ServletDenuncia"})
 public class ServletDenuncia extends HttpServlet {
 
@@ -44,7 +46,7 @@ public class ServletDenuncia extends HttpServlet {
         this.Ingresardenuncia(request, response);
         }  
         
-          if (request.getParameter("inevidciu")!=null) {
+          if (request.getParameter("denunci")!=null) {
         this.Ingresardenunciaciudadano(request, response);
         } 
         
@@ -98,9 +100,9 @@ public class ServletDenuncia extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=fec+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\GitHub\\PettApp\\PettApp\\web\\Administrador\\FotosDenuncia\\"+nombre;
+          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Denuncia\\"+nombre;
           
-          String Url2="FotosDenuncia/"+nombre;
+          String Url2=nombre;
           
           InputStream file=foto.getInputStream();
           File f=new File(Url);

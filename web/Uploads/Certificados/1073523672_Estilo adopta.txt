@@ -1,0 +1,10 @@
+#logoadopta{
+    height:100px;
+    width: 100px;
+}
+#logoadoptas{
+    height:100px;
+    width: 100px;
+    position: absolute;
+    top:30%;
+}

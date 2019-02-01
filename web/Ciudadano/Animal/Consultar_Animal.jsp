@@ -48,7 +48,7 @@
                 
                 <div class="caja2">
                     <table class="table">
-                        <form method='POST' action='../Postulacion/IngresarPostulacionAdmin_1.jsp'>
+                        <form method='POST' action='../Postulacion/IngresarPostulacion.jsp'>
                         <input type='hidden' name='code' value='<%=cgsc.getCod()%>'>
                   <input type='image' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
                   <h1>Adoptame</h1>

@@ -30,7 +30,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
-    <form action="../../../PettApp/Ciudadano/Ciudadano/Menu/Ciudadano.jsp" >
+    <form action="../../../PettAppJ/Ciudadano/Ciudadano/Menu/Ciudadano.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">
@@ -47,7 +47,7 @@
     <label>Denuncia</label><input type="text" name="denuncia" required="" class="form-control">
     <label>Evidencia</label><input id="inp" type="file" name="IMG" >
       <div class="form-group" id="bot">
-      <input type="submit" name="inevidciu" value="Realizar Denuncia" class="btn btn-primary">
+      <input type="submit" name="denunci" value="Realizar Denuncia" class="btn btn-primary">
       </div>
     </form>
 </div>

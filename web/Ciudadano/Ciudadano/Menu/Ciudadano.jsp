@@ -65,8 +65,8 @@
 
      <div class="row" id="icono">
           <div class="col-sm">
-              <form action="../../Eventos/Vista/Vista_Eventos.jsp">
-                <img name="eventoss" src="logos/evento.png" height="250" width="250" id="eventos"> 
+              <form action="../../Evento/Consultar_Evento.jsp">
+                <input type="image" name="eventoss" src="logos/evento.png" height="250" width="250" id="eventos"> 
               </form>
           </div>
 
@@ -77,7 +77,7 @@
           </div>
 
           <div class="col-sm">
-                <form action="../../Denuncias/Vista/Vista_Denuncias.jsp">
+                <form action="../../Denuncias/Ingresar_Denuncia.jsp">
                   <input  type="image" name="denuncia" src="logos/Denuncia.png" height="250" width="250" id="denuncia">
                 </form>
           </div>

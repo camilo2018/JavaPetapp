@@ -119,7 +119,6 @@ public class ServletPostulacion1 extends HttpServlet {
         GSPostulacionAdmin con=new GSPostulacionAdmin(tel,dir,fij,Url2,ced,coda);
         Postulacion in=new Postulacion();
         in.Ingresar_postulacion(con);
-        request.getRequestDispatcher("../PettAppJ/Ciudadano/Ciudadano/Menu/Ciudadano.jsp").forward(request, response);
-
+        request.getRequestDispatcher("Ciudadano/Animal/Consultar_Animal.jsp").forward(request, response);
     }
 }

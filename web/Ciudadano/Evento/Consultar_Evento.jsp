@@ -4,6 +4,9 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Evento.Evento"%>
+<%@page import="Modelo.Administrador.Evento.GSEventoAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,16 +20,15 @@
         <script src="JQ/main.js"></script>
         
 </head>
+
     <body>
-	<form action="../Menu/Administrador.jsp">
+	
+       <form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
-  	</form>
-        <form action="IngresarEvento_Adm.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
         
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
-    <h3 class="display-4">Evento</h3>
+    <h3 class="display-4">Eventos</h3>
     	        <%
                 ArrayList<GSEventoAdmin> dat = new ArrayList<>();
                 Evento co = new Evento();
@@ -69,15 +71,7 @@
                         <th><%=cgsc.getDesc()%></th>
                         </tr>    
                     
-                <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
-                </form>
-            
-                <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
-                </form>
+               
                 
                 
                 </table>
