@@ -1,6 +1,7 @@
 package Modelo.Administrador.Adopcion;
 
 import Controlador.conexion;
+import Modelo.Administrador.Animal.GSAnimalAdmin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,4 +48,23 @@ public class Adopcion {
             JOptionPane.showMessageDialog(null,"Error verifica los datos Ingresados");
         }
     }
+     public void Guardar_Adoptado(GSAdoptado ing){
+        try{
+            ps=cnn.prepareStatement("insert into adoptados (nombre_animal,tipo_animal,edad_animal,raza_animal,tamaño,genero,color,foto) values (?,?,?,?,?,?,?,?)");
+            ps.setString(1,ing.getNom());
+            ps.setString(2,ing.getTip());
+            ps.setString(3,ing.getEda());
+            ps.setString(4,ing.getRaz());
+            ps.setString(5,ing.getTam());
+            ps.setString(6,ing.getGen());
+            ps.setString(7,ing.getCol());
+            ps.setString(8,ing.getFot());
+            ps.executeUpdate();
+        }
+        catch(Exception e){
+         JOptionPane.showMessageDialog(null, "No se ha podido Ingresar el Animal"+e);
+                    
+        }
+    }
+
 }

@@ -124,7 +124,7 @@ private int r;
             }
             else if(r==4){
             JOptionPane.showMessageDialog(null, "Ciudadano"); 
-            response.sendRedirect("Ciudadano/Ciudadano/Menu/Ciudadano.jsp");    
+            response.sendRedirect("../PettAppJ/Ciudadano/Ciudadano/Menu/Menuc.jsp");    
             }
             else{
             }

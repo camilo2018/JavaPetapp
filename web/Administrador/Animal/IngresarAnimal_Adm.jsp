@@ -18,13 +18,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../../PettApp/Administrador/Animal/CSS/Estilo.css">
+    <link rel="stylesheet" href="../../../PettAppJ/Administrador/Animal/CSS/Estilo.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <body id="fondox">
 
 
-    <form action="../../PettAppJ/Administrador/Animal/Consultar_Animal.jsp" >
+    <form action="../PettAppJ/Administrador/Animal/Consultar_Animal.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">

@@ -5,8 +5,11 @@
  */
 package Controlador.Administra;
 
+import Modelo.Administrador.Adopcion.Adopcion;
+import Modelo.Administrador.Adopcion.GSAdoptado;
 import Modelo.Administrador.Animal.Animal;
 import Modelo.Administrador.Animal.GSAnimalAdmin;
+import Modelo.Administrador.Animal.GSAnimalAdoptado;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -84,6 +87,9 @@ public class ServletAnimal extends HttpServlet {
         GSAnimalAdmin con=new GSAnimalAdmin(nomb,tip,ed,raz,tam,gen,col,Url2);
         Animal in=new Animal();
         in.Ingresar_animal(con);
+        GSAdoptado con2=new GSAdoptado(nomb,tip,ed,raz,tam,gen,col,Url2);
+        Adopcion in2=new Adopcion();
+        in2.Guardar_Adoptado(con2);
         request.getRequestDispatcher("Administrador/Animal/IngresarAnimal_Adm.jsp").forward(request, response);
 
        
