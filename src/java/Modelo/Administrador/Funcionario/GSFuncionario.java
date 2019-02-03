@@ -2,65 +2,52 @@ package Modelo.Administrador.Funcionario;
 
 public class GSFuncionario {
     
-    private String cedulafuncionario;
-    private String telefonofuncionario;
-    private String nombrefuncionario;
-    private String correofuncionario;
-    private int rolfuncionario;
+    private String ced;
+    private String tel;
+    private String nom;
+    private String cor;
 
-    public GSFuncionario(String cedulafuncionario, String telefonofuncionario, String nombrefuncionario, String correofuncionario, int rolfuncionario) {
-        this.cedulafuncionario = cedulafuncionario;
-        this.telefonofuncionario = telefonofuncionario;
-        this.nombrefuncionario = nombrefuncionario;
-        this.correofuncionario = correofuncionario;
-        this.rolfuncionario = rolfuncionario;
-    }
-
-    public GSFuncionario(String cedulafuncionario) {
-        this.cedulafuncionario = cedulafuncionario;
+    public GSFuncionario(String ced, String tel, String nom, String cor) {
+        this.ced = ced;
+        this.tel = tel;
+        this.nom = nom;
+        this.cor = cor;
     }
 
     public GSFuncionario() {
     }
 
-    public String getCedulafuncionario() {
-        return cedulafuncionario;
+    public String getCed() {
+        return ced;
     }
 
-    public void setCedulafuncionario(String cedulafuncionario) {
-        this.cedulafuncionario = cedulafuncionario;
+    public void setCed(String ced) {
+        this.ced = ced;
     }
 
-    public String getTelefonofuncionario() {
-        return telefonofuncionario;
+    public String getTel() {
+        return tel;
     }
 
-    public void setTelefonofuncionario(String telefonofuncionario) {
-        this.telefonofuncionario = telefonofuncionario;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
-    public String getNombrefuncionario() {
-        return nombrefuncionario;
+    public String getNom() {
+        return nom;
     }
 
-    public void setNombrefuncionario(String nombrefuncionario) {
-        this.nombrefuncionario = nombrefuncionario;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getCorreofuncionario() {
-        return correofuncionario;
+    public String getCor() {
+        return cor;
     }
 
-    public void setCorreofuncionario(String correofuncionario) {
-        this.correofuncionario = correofuncionario;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
-    public int getRolfuncionario() {
-        return rolfuncionario;
-    }
-
-    public void setRolfuncionario(int rolfuncionario) {
-        this.rolfuncionario = rolfuncionario;
-    }
     
 }

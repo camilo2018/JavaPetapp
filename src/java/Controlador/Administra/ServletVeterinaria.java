@@ -5,24 +5,29 @@
  */
 package Controlador.Administra;
 
-import Modelo.Administrador.Funcionario.Funcionario;
-import Modelo.Administrador.Funcionario.GSFuncionario;
 import Modelo.Administrador.Veterinaria.GSVeterinaria;
 import Modelo.Administrador.Veterinaria.Veterinaria;
+import Modelo.Usuario.GSUsuario;
+import Modelo.Usuario.Usuario;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author SENA
  */
 @WebServlet(name = "ServletVeterinaria", urlPatterns = {"/ServletVeterinaria"})
+@MultipartConfig
 public class ServletVeterinaria extends HttpServlet {
 
     /**
@@ -39,17 +44,8 @@ public class ServletVeterinaria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        
-        if(request.getParameter("botonvete")!=null){
+        if(request.getParameter("botonfunci")!=null){
             this.Ingresar(request, response);
-        }
-        
-        else if(request.getParameter("botmodvet")!=null){
-            this.Modificar(request, response);
-        }
-        
-        else if(request.getParameter("botelivet")!=null){
-            this.Eliminar(request, response);
         }
         
     }
@@ -59,72 +55,43 @@ public class ServletVeterinaria extends HttpServlet {
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
 
-        String nit_vet,telefono_vet,nombre_vet,direccion_vet,clave_vet;
-        int rol_vet;
+        String nit,tel,nom,dir;
+        nit=request.getParameter("nit");
+        tel=request.getParameter("telefono");
+        nom=request.getParameter("nombre");
+        dir=request.getParameter("direccion");
+         Part foto=request.getPart("foto");
+          String nomfoto=foto.getSubmittedFileName();
+          String nombre=nit+nom;
+          
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios/"+nombre;
+          
+          String Url2=nombre;
+          
+          InputStream file=foto.getInputStream();
+          File f=new File(Url);
+          FileOutputStream sal=new FileOutputStream(f);
+          int num=file.read();
+          while(num!= -1){
+              sal.write(num);
+              num=file.read();
+          }
         
-        nit_vet=request.getParameter("nit");
-        telefono_vet=request.getParameter("telefono");
-        nombre_vet=request.getParameter("nombre");
-        direccion_vet=request.getParameter("direccion");
-        rol_vet=Integer.parseInt(request.getParameter("rol"));
-        
-        GSVeterinaria IGSL = new GSVeterinaria(nit_vet, telefono_vet, nombre_vet, direccion_vet, rol_vet);
-        Veterinaria IDL = new Veterinaria();
-        
-        IDL.Insertar(IGSL);
-    
-        request.getRequestDispatcher("Administrador/Veterinaria/Ingresar_Veterinaria.jsp").forward(request, response);
+        int rol = 3;
+        String cla = "veterinaria";
+        GSUsuario con2=new GSUsuario(nit,cla,rol,Url2);
+        Usuario in2=new Usuario();
+        in2.Ingresar_ciud(con2);
+        GSVeterinaria con=new GSVeterinaria(nit,tel,nom,dir);
+        Veterinaria in=new Veterinaria();
+        in.Insertar(con);
+        response.sendRedirect("Administrador/Veterinaria/Ingresar_Veterinaria.jsp");
         
     }
     
-    protected void Modificar(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String nit_vet,telefono_vet,nombre_vet,direccion_vet;
-        int s;
-        
-        nit_vet=request.getParameter("nit");
-        telefono_vet=request.getParameter("telefono");
-        nombre_vet=request.getParameter("nombre");
-        direccion_vet=request.getParameter("direccion");
-        
-        GSVeterinaria lgs = new GSVeterinaria(nit_vet, telefono_vet, nombre_vet, direccion_vet);
-        Veterinaria al = new Veterinaria();
-        s = al.Actualizar(lgs);
-        
-        if (s>0) {
-            JOptionPane.showMessageDialog(null, "Datos Actualizados");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Datos no fueron Actualizados");
-        }
-        request.getRequestDispatcher("Administrador/Veterinaria/Modificar_Eliminar_Veterinaria.jsp").forward(request, response);
-    }
     
-    protected void Eliminar(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String cedula_fun;
-        int x;
-        
-        cedula_fun= request.getParameter("cedula");
-        
-        GSFuncionario igs = new GSFuncionario(cedula_fun);
-        Funcionario el = new Funcionario();
-        x = el.Eliminar(igs);
-        
-        if (x>0) {
-            JOptionPane.showMessageDialog(null, "Datos Borrados");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Datos no fueron Borrados");
-        }
-        request.getRequestDispatcher("Administrador/Funcionario/Modificar_Eliminar_Funcionario.jsp").forward(request, response);
-    }
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

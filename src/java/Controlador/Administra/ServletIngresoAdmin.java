@@ -5,21 +5,27 @@
  */
 package Controlador.Administra;
 
-import Modelo.Administrador.Admin.Admin;
-import Modelo.Administrador.Admin.GSAdminAdmin;
+import Modelo.Usuario.GSUsuario;
+import Modelo.Usuario.Usuario;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author SENA
  */
 @WebServlet(name = "ServletIngresoAdmin", urlPatterns = {"/ServletIngresoAdmin"})
+@MultipartConfig
 public class ServletIngresoAdmin extends HttpServlet {
 
     /**
@@ -36,7 +42,7 @@ public class ServletIngresoAdmin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
             
-            if (request.getParameter("boton7")!=null) {
+            if (request.getParameter("botonfunci")!=null) {
             this.Ingresaradmin(request, response);
         }
     }
@@ -45,16 +51,34 @@ public class ServletIngresoAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        PrintWriter out = response.getWriter();
-       int rol;
-       String nom,cla;
-       nom=request.getParameter("nombre");
-       cla=request.getParameter("clave");
-       rol=1;
-    
-       GSAdminAdmin con=new GSAdminAdmin(nom,cla,rol);
-       Admin in=new Admin();
-       in.Ingresar_admin(con);
-       request.getRequestDispatcher("Administrador/Admin/IngresarAdminAdmin.jsp").forward(request, response);
+       
+       String usu;
+        usu=request.getParameter("usu");
+         Part foto=request.getPart("foto");
+          String nomfoto=foto.getSubmittedFileName();
+          String nombre=usu;
+          
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios/"+nombre;
+          
+          String Url2=nombre;
+          
+          InputStream file=foto.getInputStream();
+          File f=new File(Url);
+          FileOutputStream sal=new FileOutputStream(f);
+          int num=file.read();
+          while(num!= -1){
+              sal.write(num);
+              num=file.read();
+          }
+
+
+        
+        int rol = 1;
+        String cla = "admin";
+        GSUsuario con2=new GSUsuario(usu,cla,rol,Url2);
+        Usuario in2=new Usuario();
+        in2.Ingresar_ciud(con2);
+        response.sendRedirect("Administrador/Admin/IngresarAdminAdmin.jsp");
        
        
     }

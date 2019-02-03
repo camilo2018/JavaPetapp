@@ -61,10 +61,10 @@ public class ServletRegistrarse extends HttpServlet {
         nom=request.getParameter("nombre");
         cel=request.getParameter("telefono");
         dir=request.getParameter("direccion");
-        cor=request.getParameter("email");
+        cor=request.getParameter("correo");
          Part foto=request.getPart("imagen");
           String nomfoto=foto.getSubmittedFileName();
-          String nombre=ced+"_"+usu+"_"+nomfoto;
+          String nombre=ced+usu;
           
           String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios/"+nombre;
           
@@ -80,15 +80,15 @@ public class ServletRegistrarse extends HttpServlet {
           }
 
 
-        GSCiudadanoAdmin con=new GSCiudadanoAdmin(ced,nom,cel,dir,cor,usu);
-        Ciudadano in=new Ciudadano();
-        in.Ingresar_ciudadano(con);
+        
         int rol = 4;
         GSUsuario con2=new GSUsuario(usu,cla,rol,Url2);
         Usuario in2=new Usuario();
         in2.Ingresar_ciud(con2);
-        
-        request.getRequestDispatcher("Login/Registrarse.jsp").forward(request, response);
+        GSCiudadanoAdmin con=new GSCiudadanoAdmin(ced,nom,cel,dir,cor,usu);
+        Ciudadano in=new Ciudadano();
+        in.Ingresar_ciudadano(con);
+        response.sendRedirect("Login/Registrarse.jsp");
        
     }
 

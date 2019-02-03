@@ -2,68 +2,52 @@ package Modelo.Administrador.Veterinaria;
 
 public class GSVeterinaria {
     
-    private String nitveterinaria;
-    private String telefonoveterinaria;
-    private String nombreveterinaria;
-    private String direccionveterinaria;
-    private int rolveterinaria;
+    private String nit;
+    private String tel;
+    private String nom;
+    private String dir;
 
-    public GSVeterinaria(String nitveterinaria, String telefonoveterinaria, String nombreveterinaria, String direccionveterinaria, int rolveterinaria) {
-        this.nitveterinaria = nitveterinaria;
-        this.telefonoveterinaria = telefonoveterinaria;
-        this.nombreveterinaria = nombreveterinaria;
-        this.direccionveterinaria = direccionveterinaria;
-        this.rolveterinaria = rolveterinaria;
-    }
-
-    public GSVeterinaria(String nitveterinaria, String telefonoveterinaria, String nombreveterinaria, String direccionveterinaria) {
-        this.nitveterinaria = nitveterinaria;
-        this.telefonoveterinaria = telefonoveterinaria;
-        this.nombreveterinaria = nombreveterinaria;
-        this.direccionveterinaria = direccionveterinaria;
+    public GSVeterinaria(String nit, String tel, String nom, String dir) {
+        this.nit = nit;
+        this.tel = tel;
+        this.nom = nom;
+        this.dir = dir;
     }
 
     public GSVeterinaria() {
     }
 
-    public String getNitveterinaria() {
-        return nitveterinaria;
+    public String getNit() {
+        return nit;
     }
 
-    public void setNitveterinaria(String nitveterinaria) {
-        this.nitveterinaria = nitveterinaria;
+    public void setNit(String nit) {
+        this.nit = nit;
     }
 
-    public String getTelefonoveterinaria() {
-        return telefonoveterinaria;
+    public String getTel() {
+        return tel;
     }
 
-    public void setTelefonoveterinaria(String telefonoveterinaria) {
-        this.telefonoveterinaria = telefonoveterinaria;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
-    public String getNombreveterinaria() {
-        return nombreveterinaria;
+    public String getNom() {
+        return nom;
     }
 
-    public void setNombreveterinaria(String nombreveterinaria) {
-        this.nombreveterinaria = nombreveterinaria;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getDireccionveterinaria() {
-        return direccionveterinaria;
+    public String getDir() {
+        return dir;
     }
 
-    public void setDireccionveterinaria(String direccionveterinaria) {
-        this.direccionveterinaria = direccionveterinaria;
+    public void setDir(String dir) {
+        this.dir = dir;
     }
 
-    public int getRolveterinaria() {
-        return rolveterinaria;
-    }
-
-    public void setRolveterinaria(int rolveterinaria) {
-        this.rolveterinaria = rolveterinaria;
-    }
-
+    
 }

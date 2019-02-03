@@ -24,21 +24,16 @@
 <body id="fondox">
 
 
-    <form action="../../../PettAppJ/Administrador/Admin/Consultar_Admin.jsp">
+    <form action="../Consultar_Admin.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
-    
-<div id="padre">
-	<div id="insertar" class="form-group">
-	<h1>Insertar Administrador</h1>
- <form action="../../ServletIngresoAdmin">
- 	<label>Nombre de Usuario </label><input type="text" name="nombre" required="" class="form-control">
-    <label>Clave</label><input type="password" name="clave" required="" class="form-control">
-      <div class="form-group" id="bot">
-      <input type="submit" name="boton7" value="Insertar Nuevo Usuario" class="btn btn-primary">
-      </div>
-    </form>
-</div>
-</div>
-</body>
+        <center><div  id="insertar">
+        <form action="../../ServletIngresoAdmin" enctype="multipart/form-data" method="Post">
+            <center><p class="lead">Insertar Administrador</p></center>
+        <p>Usuario</br><input type="text" name="usu" size="30" class="form-control"></p>
+        <p>Foto</br><input type="file" name="foto" size="30"></p>
+        <input type="submit" name="botonfunci" value="Guardar" class="btn btn-primary">
+        </form>
+        </div>
+        </center></body>
 </html>
