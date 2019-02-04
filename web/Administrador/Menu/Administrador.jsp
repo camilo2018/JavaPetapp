@@ -154,7 +154,7 @@
     </div>
   </form>
 
-<form action="../Postulacion/IngresarPostulacionAdmin.jsp">
+<form action="../Postulacion/Consultar_Postulacion.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">

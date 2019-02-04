@@ -31,6 +31,20 @@ public class Postulacion {
             JOptionPane.showMessageDialog(null,"No se ha podido Ingresar la Postulacion"+e);
         }
     }
+    
+    public ArrayList<GSPostulacionAdmin> ConsultaAdmin(){
+        ArrayList<GSPostulacionAdmin> R=new ArrayList<>();
+        try{
+            ps=cnn.prepareStatement("select * from postulacion");
+            res=ps.executeQuery();
+            while(res.next()){
+                GSPostulacionAdmin cp=new GSPostulacionAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7));
+                R.add(cp);
+            }
+        }catch(Exception e){
+            
+        }return R;
+    }
 
     public ArrayList<GSPostulacionAdmin> Consultar(){
         ArrayList<GSPostulacionAdmin> R = new ArrayList<>();
@@ -47,5 +61,6 @@ public class Postulacion {
             } catch (Exception e) {
             }
             return R;
-        }    
+        }
+        
 }

@@ -36,7 +36,7 @@ public class ServletSeguimiento extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if (request.getParameter("ingseg")!=null) {
+        if (request.getParameter("seguimien")!=null) {
             this.IngresarSeguimiento(request, response);
         }
     }
@@ -46,13 +46,18 @@ public class ServletSeguimiento extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        int codp;
+        int codp,codan;
+        String tel,dir,fij,ced;
                codp=Integer.parseInt(request.getParameter("codigo"));
-       
+               tel=request.getParameter("telefono");
+               dir=request.getParameter("direccion");
+               fij=request.getParameter("fijo");
+               ced=request.getParameter("cedula");
+               codan=Integer.parseInt(request.getParameter("animal"));
          GSSeguimientoAdmin con=new GSSeguimientoAdmin(codp);
         Seguimiento in=new Seguimiento();
         in.Ingresar_segui(con);
-        request.getRequestDispatcher("Administrador/Seguimiento/IngresarSeguimiento_Adm.jsp").forward(request, response);
+        request.getRequestDispatcher("Administrador/Seguimiento/ConsultarSeguimiento.jsp").forward(request, response);
        
     }
      

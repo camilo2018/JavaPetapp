@@ -36,7 +36,7 @@
     	        <%
                 ArrayList<GSPostulacionAdmin> dat = new ArrayList<>();
                 Postulacion co = new Postulacion();
-                dat=co.Consultar();
+                dat=co.ConsultaAdmin();
                 GSPostulacionAdmin cgsc= new GSPostulacionAdmin();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
@@ -82,16 +82,16 @@
                         <th>Animal</th>
                         <th><%=cgsc.getCoda()%></th>
                         </tr>
-                        <tr>
-                        <th>Telefono</th>
-                        <th><%=cgsc.getTel()%></th>
-                        </tr>
-                        <tr>
-                             
+                    <tr>
                     
-                <form method='POST' action=''>
-                    <input type='hidden' name='nomA' value='<%=cgsc.getNom()%>'>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+                <form method='POST' action='../../ServletSeguimiento'>
+                    <input type='hidden' name='codigo' value='<%=cgsc.getCod()%>'>
+                    <input type='hidden' name='telefono' value='<%=cgsc.getTel()%>'>
+                    <input type='hidden' name='direccion' value='<%=cgsc.getDir()%>'>
+                    <input type='hidden' name='fijo' value='<%=cgsc.getFij()%>'>
+                    <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
+                    <input type='hidden' name='animal' value='<%=cgsc.getCoda()%>'>
+                    <th><input type='submit' name='seguimien' value='Seguimiento' class='btn btn-info' ></th>
                 </form>
             
                 <form method='POST' action=''>
@@ -102,8 +102,7 @@
                 
                 </table>
 <!Enviar datos>                
-                <input  class='nme' type='hidden'  value='<%=cgsc.getNom()%>'>
-                <th><input class='elimin' type='button' value='Eliminar'></th>
+           
 <!Enviar datos>              
               
             </table>

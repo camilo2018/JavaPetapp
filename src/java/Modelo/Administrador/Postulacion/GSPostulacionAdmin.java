@@ -29,6 +29,10 @@ public class GSPostulacionAdmin {
         this.coda = coda;
     }
 
+    public GSPostulacionAdmin(int cod) {
+        this.cod = cod;
+    }
+
     public GSPostulacionAdmin() {
     }
 
@@ -87,5 +91,7 @@ public class GSPostulacionAdmin {
     public void setCoda(int coda) {
         this.coda = coda;
     }
+
+
 
 }
