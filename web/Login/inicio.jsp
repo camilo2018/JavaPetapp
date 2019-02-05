@@ -33,7 +33,9 @@
 			<input type="submit" name="Entrar" value="Iniciar Sesion" class="btn btn-primary" >
 			</center>
 		</form>
-		
+	<%
+                
+            %>	
 	</div>
 		<div><br>
 			<center>

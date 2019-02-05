@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 /**
@@ -123,8 +124,12 @@ private int r;
             response.sendRedirect("Veterinaria/IndexVeterinaria.jsp");    
             }
             else if(r==4){
-            JOptionPane.showMessageDialog(null, "Ciudadano"); 
-            response.sendRedirect("../PettAppJ/Ciudadano/Ciudadano/Menu/Menuc.jsp");    
+            JOptionPane.showMessageDialog(null, "Ciudadano");
+            HttpSession htt=request.getSession();
+            String naom=request.getParameter("Usuario");
+            String dato= new String(naom);
+            htt.setAttribute("nom", dato);
+            response.sendRedirect("Ciudadano/Login/login.jsp");    
             }
             else{
             }
