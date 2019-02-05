@@ -17,7 +17,7 @@ public class conexion {
     public Connection conexionpa(){
     try{
     Class.forName("com.mysql.jdbc.Driver");
-    cnn=DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","camilo57");
+    cnn=DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","");
     }
     catch(Exception e){
         System.out.println("Error de conexion" +e);

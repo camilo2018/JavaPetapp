@@ -128,7 +128,7 @@
   </form>
 
 
-    <form action="../Funcionario/Consultar_Funcionario.jsp">
+    <form action="../Funcionario/Consultar_Funcionarios.jsp">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">

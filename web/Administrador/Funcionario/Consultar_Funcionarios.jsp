@@ -22,7 +22,7 @@
         
 </head>
     <body>
-        <form action="../Funcionario/Ingresar_Funcionario.jsp">
+        <form action="../Funcionario/Ingresar_Funcionarios.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
 
@@ -45,7 +45,7 @@
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc.getNombrefuncionario()%></th>
+                    <th><%=cgsc.getNom()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -55,24 +55,21 @@
                     <table class="table">
                         <tr>
                         <th>Nombre</th>
-                        <th><%=cgsc.getNombrefuncionario()%></th>
+                        <th><%=cgsc.getNom()%></th>
                         </tr>
                         <tr>
                         <th>Cedula</th>
-                        <th><%=cgsc.getCedulafuncionario()%></th>
+                        <th><%=cgsc.getCed()%></th>
                         </tr>
                         <tr>
                         <th>Telefono</th>            
-                        <th><%=cgsc.getTelefonofuncionario()%></th>
+                        <th><%=cgsc.getTel()%></th>
                         </tr>
                         <tr>
                         <th>Correo</th>
-                        <th><%=cgsc.getCorreofuncionario()%></th>
+                        <th><%=cgsc.getCor()%></th>
                         </tr>
                         <tr>
-                        <th>Rol</th>
-                        <th><%=cgsc.getRolfuncionario()%></th>
-                        </tr>    
                     
                 <form method='POST' action=''>
                     <input type='hidden' name='cod' value=''>

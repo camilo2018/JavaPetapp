@@ -60,7 +60,11 @@
                             <input type='hidden' name='usu4' value='<%=cgsc.getNom()%>'>
                             <input type="submit" class="dropdown-item" name="per" value="Perfil"></a>
                         </form>
-                        <%}%>
+                        <form action="../Respuesta/Mostrar_Respuestas.jsp" method="Post">
+                            <input type='hidden' name='usu3' value='<%=cgsc.getNom()%>'>
+                            <input type="submit" class="dropdown-item" name="res" value="Respuesta"></a>
+                        </form>
+                        <%}%>    
                         <%
                         if (request.getParameter("per")!=null){
                         HttpSession htt=request.getSession();
@@ -69,8 +73,15 @@
                         htt.setAttribute("nom1", dato);
                         response.sendRedirect("../Ciudadano/Consultar_Ciudadano.jsp");
                         }
+                        else if (request.getParameter("res")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("usu3");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom1", dato);
+                        response.sendRedirect("../Respuesta/Mostrar_Respuestas.jsp");
+                        }
                         %>
-                        <a class="dropdown-item" href="../../Notificaciones/Vista/Vista_Notificaciones.php" name="not">Respuestas</a> <a class="dropdown-item" href="../../Menu/Vista/Ciudadano.php" name="ciu">Menu</a>
+                        <a class="dropdown-item" href="../../Menu/Vista/Ciudadano.php" name="ciu">Menu</a>
                             <div class="dropdown-divider">
                         </div> <a class="dropdown-item" href="../../../Cerrar.php">Cerrar Sesion</a>
                     </div>

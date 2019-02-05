@@ -1,16 +1,17 @@
 <%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
 <%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
-<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.Respuesta.Respuesta"%>
+<%@page import="Modelo.Respuesta.GSRespuesta"%>
 <%@page import="Modelo.Usuario.Usuario"%>
-<%@page import="Modelo.Usuario.GSUsuario"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Usuario.GSUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,  user-scalabe=no, initial-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="CSS/EstiloIngresoCiudadano.css">
+        <link rel="stylesheet" href="CSS/EstiloRespuesta.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -25,7 +26,8 @@
         <%
         HttpSession ht = request.getSession();
         String dat2=(String)ht.getAttribute("nom1");
-        
+        %>
+        <%
                 ArrayList<GSUsuario> datc1 = new ArrayList<>();
                 Usuario co1 = new Usuario();
                 datc1=co1.Consultar1(dat2);
@@ -33,6 +35,8 @@
                 for (int i = 0; i < datc1.size() ; i++) {
                         cgsc=datc1.get(i);
                 %>
+                    <input type='hidden' class='usu' value='<%=cgsc.getNom()%>' name="usu4">
+                
             
         <div class="container-fluid">
 	<div class="row">
@@ -88,25 +92,37 @@
 	</div>
 </div>
         
-        <form action="Menu/Ciudadano.jsp">
-            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
-  	</form>
-            <h3 class="display-4" style="margin-top: 50px;">Ciudadano</h3>
-    	        <%
+                <%
                 ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
                 Ciudadano co = new Ciudadano();
                 dat=co.Consultar1(dat2);
-                GSCiudadanoAdmin cgsc1= new GSCiudadanoAdmin();
+                GSCiudadanoAdmin cgsc2= new GSCiudadanoAdmin();
                 
                 for (int i = 0; i < dat.size() ; i++) {
-                        cgsc1=dat.get(i);
+                        cgsc2=dat.get(i);
+                %>
+                <input type='hidden' name='cedul' value='<%=cgsc2.getCed()%>'>
+                <%}%>
+        
+        <form action="Menu/Ciudadano.jsp">
+            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
+  	</form>
+            <h3 class="display-4" style="margin-top: 50px;">Respuesta</h3>
+    	        <%
+                String ced=request.getParameter("cedul");
+                ArrayList<GSRespuesta> res = new ArrayList<>();
+                Respuesta res1 = new Respuesta();
+                res=res1.Consultar1(ced);
+                GSRespuesta res2= new GSRespuesta();
+                for (int i = 0; i < res.size() ; i++) {
+                        res2=res.get(i);
                 %>
             <div id="centro">
                 <div class="caja1">
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc1.getNom()%></th>
+                    <th><%=res2.getCed()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -115,25 +131,19 @@
                 <div class="caja2">
                     <table class="table">
                         <tr>
+                        <th>Codigo</th>
+                        <th><%=res2.getCod()%></th>
+                        </tr>
+                        <tr>
                         <th>Cedula</th>
-                        <th><%=cgsc1.getCed()%></th>
+                        <th><%=res2.getCed()%></th>
                         </tr>
                         <tr>
-                        <th>Nombre</th>
-                        <th><%=cgsc1.getNom()%></th>
+                        <th>Mensaje</th>            
+                        <th><%=res2.getMen()%></th>
                         </tr>
                         <tr>
-                        <th>Telefono</th>            
-                        <th><%=cgsc1.getTel()%></th>
-                        </tr>
-                        <tr>
-                        <th>Direccion</th>
-                        <th><%=cgsc1.getDir()%></th>
-                        </tr>
-                        <tr>
-                        <th>Correo</th>
-                        <th><%=cgsc1.getCor()%></th>
-                        </tr>
+                        
                     
                 <form method='POST' action=''>
                     <input type='hidden' name='cod' value=''>
@@ -149,6 +159,8 @@
                 </table>
             </div>
             </div>
-            <%}%>
+            <%}%>                        
+        
+        
     </body>
 </html>
