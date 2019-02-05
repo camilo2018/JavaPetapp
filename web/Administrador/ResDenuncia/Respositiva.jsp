@@ -30,7 +30,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
-    <form action="../Seguimiento/Continuar_Postulacion.jsp">
+    <form action="../Denuncia/Consultar_Denuncia.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">
