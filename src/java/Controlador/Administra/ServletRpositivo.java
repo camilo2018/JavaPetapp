@@ -5,29 +5,23 @@
  */
 package Controlador.Administra;
 
-import Modelo.Administrador.Postulacion.GSPostulacionAdmin;
-import Modelo.Administrador.Postulacion.Postulacion;
-import java.io.File;
-import java.io.FileOutputStream;
+import Modelo.Administrador.Animal.GSAnimalAdmin;
+import Modelo.Administrador.ResPositiva.GSRespositiva;
+import Modelo.Administrador.ResPositiva.Rpositiva;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author KnokinGm
  */
-@MultipartConfig
-@WebServlet(name = "ServletPostulacion1", urlPatterns = {"/ServletPostulacion1"})
-public class ServletPostulacion1 extends HttpServlet {
+@WebServlet(name = "ServletRpositivo", urlPatterns = {"/ServletRpositivo"})
+public class ServletRpositivo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,15 +35,50 @@ public class ServletPostulacion1 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter();
         
-         if (request.getParameter("ingpostu")!=null) {
-            this.IngresoPostulacion(request, response);
-      
+         if (request.getParameter("posresp")!=null) {
+            this.IngresarRespuesta(request, response);
         }
-       
+        
+          if (request.getParameter("denresp")!=null) {
+            this.IngresarRespuestad(request, response);
+        }
     }
+  protected void IngresarRespuesta(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int coda;
+        String ce,men;
+        ce=request.getParameter("cedul");
+        men=request.getParameter("posres");
+        coda=Integer.parseInt(request.getParameter("anim"));
+        GSRespositiva con=new GSRespositiva(ce, men);
+        Rpositiva in=new Rpositiva();
+        in.Ingresar_Positiva(con);
+        GSAnimalAdmin con2=new GSAnimalAdmin(coda);
+        Rpositiva in2=new Rpositiva();
+        in2.EliminarAnim(con2);
+        response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");
+    }
+  
+    protected void IngresarRespuestad(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int coda;
+        String ce,men;
+        ce=request.getParameter("cedul");
+        men=request.getParameter("denres");
+        GSRespositiva con=new GSRespositiva(ce, men);
+        Rpositiva in=new Rpositiva();
+        in.Ingresar_Positiva(con);
+        response.sendRedirect("Administrador/ResDenuncia/Respositiva.jsp");
 
+        
+        
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -88,38 +117,5 @@ public class ServletPostulacion1 extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
- protected void IngresoPostulacion(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       PrintWriter out = response.getWriter();
-       
-         String tel,dir,fij,ced;
-        int coda;
-        tel=request.getParameter("telefono");
-        dir=request.getParameter("direccion");
-        fij=request.getParameter("fijo");
-         Part foto=request.getPart("IMG");
-          ced=request.getParameter("cedula");
-        coda=Integer.parseInt(request.getParameter("coda"));
-          String nomfoto=foto.getSubmittedFileName();
-          String nombre=ced+"_"+nomfoto;
-          
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Certificados\\"+nombre;
-          
-          String Url2=nombre;
-          
-          InputStream file=foto.getInputStream();
-          File f=new File(Url);
-          FileOutputStream sal=new FileOutputStream(f);
-          int num=file.read();
-          while(num!= -1){
-              sal.write(num);
-              num=file.read();
-          }
-        GSPostulacionAdmin con=new GSPostulacionAdmin(tel,dir,fij,Url2,ced,coda);
-        Postulacion in=new Postulacion();
-        in.Ingresar_postulacion(con);
-        response.sendRedirect("Ciudadano/Animal/Consultar_Animal.jsp");
 
- }
 }

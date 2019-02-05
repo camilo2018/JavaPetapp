@@ -54,11 +54,11 @@ public class ServletSeguimiento extends HttpServlet {
                fij=request.getParameter("fijo");
                ced=request.getParameter("cedula");
                codan=Integer.parseInt(request.getParameter("animal"));
-         GSSeguimientoAdmin con=new GSSeguimientoAdmin(codp);
+         GSSeguimientoAdmin con=new GSSeguimientoAdmin(codp,tel,dir,fij,ced,codan);
         Seguimiento in=new Seguimiento();
         in.Ingresar_segui(con);
-        request.getRequestDispatcher("Administrador/Seguimiento/ConsultarSeguimiento.jsp").forward(request, response);
-       
+        response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");
+
     }
      
 
