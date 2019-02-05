@@ -1,28 +1,21 @@
-<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
-<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
-<%@page import="Modelo.Respuesta.Respuesta"%>
-<%@page import="Modelo.Respuesta.GSRespuesta"%>
 <%@page import="Modelo.Usuario.Usuario"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,  user-scalabe=no, initial-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="CSS/EstiloRespuesta.css">
+        <link rel="stylesheet" href="CSS/EstilosMenu.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  	<script src="JQ/jquery-3.3.1.min.js"></script>
-        <script src="JQ/main.js"></script>
-        <title>Pet App</title>
+  	<title>Pet App</title>
 </head>
-    <body>
-        
+<body style="font-family:Rockwell;color: white;background: url('Imagen/FondoCiudadano.jpeg');background-attachment: fixed;">
         <%
         HttpSession ht = request.getSession();
         String dat2=(String)ht.getAttribute("nom1");
@@ -35,7 +28,6 @@
                 for (int i = 0; i < datc1.size() ; i++) {
                         cgsc=datc1.get(i);
                 %>
-                    <input type='hidden' class='usu' value='<%=cgsc.getNom()%>' name="usu4">
                 
             
         <div class="container-fluid">
@@ -100,77 +92,58 @@
 			</nav>
 		</div>
 	</div>
+</div>    
+<header id="encabezado">
+
+    <h1>Ciudadano</h1>
+    <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class='fotomod' style='width:250px;height:250px;border-radius:200px 200px;'>
+    <h2><%=dat2%></h2>
+    </header>
+
+
+
+
+    <div id="pricing" class="container-fluid">
+    <div class="text-center">
+
+    <h1>GESTIONAR</h1>
+     
+        <div class="row" id="icono">
+          <div class="col-sm">
+              <form action="../Evento/Consultar_Evento.jsp">
+                <input type="image" name="eventoss" src="Logo/evento.png" height="250" width="250" id="eventos"> 
+              </form>
+          </div>
+
+          <div class="col-sm">
+              <form action="">
+                <input type="image" name="animal" src="Logo/Adoptar.png" height="250" width="250" id="animales">
+              </form>
+          </div>
+
+          <div class="col-sm">
+                <form action="">
+                  <input type="image" name="denuncia" src="Logo/Denuncia.png" height="250" width="250" id="denuncia">
+                </form>
+          </div>
+        </div>
+        
+        <div class="row" id="icono2">
+          <div class="col-sm">
+                <form action="../../Mascotas/Vista/Vista_Mascotas.php">
+                  <input type="image" name="mascotas" src="Logo/Mascota.png" height="250" width="250" id="mascota">
+                </form>
+          </div>
+
+          <div class="col-sm">
+                <form action="../../Ciudadano/Vista/Vista_Ciudadano.php">
+                  <input type="image" name="datos" src="Logo/MisDatos.png" height="250" width="250" id="datos">
+                </form>
+          </div>
+        </div> 
+
+  </div>
 </div>
-        
-                <%
-                ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
-                Ciudadano co = new Ciudadano();
-                dat=co.Consultar1(dat2);
-                GSCiudadanoAdmin cgsc2= new GSCiudadanoAdmin();
-                
-                for (int i = 0; i < dat.size() ; i++) {
-                        cgsc2=dat.get(i);
-                %>
-                <input type='hidden' name='cedul' value='<%=cgsc2.getCed()%>'>
-                <%}%>
-        
-        <form action="Menu/Ciudadano.jsp">
-            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
-  	</form>
-            <h3 class="display-4" style="margin-top: 50px;">Respuesta</h3>
-    	        <%
-                String ced=request.getParameter("cedul");
-                ArrayList<GSRespuesta> res = new ArrayList<>();
-                Respuesta res1 = new Respuesta();
-                res=res1.Consultar1(ced);
-                GSRespuesta res2= new GSRespuesta();
-                for (int i = 0; i < res.size() ; i++) {
-                        res2=res.get(i);
-                %>
-            <div id="centro">
-                <div class="caja1">
-                    <table class="table">
-                    <tr>
-                    <thead class='thead-dark'>
-                    <th><%=res2.getCed()%></th>
-                    </thead>
-                    </tr>
-                    </table>
-                </div>
-                
-                <div class="caja2">
-                    <table class="table">
-                        <tr>
-                        <th>Codigo</th>
-                        <th><%=res2.getCod()%></th>
-                        </tr>
-                        <tr>
-                        <th>Cedula</th>
-                        <th><%=res2.getCed()%></th>
-                        </tr>
-                        <tr>
-                        <th>Mensaje</th>            
-                        <th><%=res2.getMen()%></th>
-                        </tr>
-                        <tr>
-                        
-                    
-                <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
-                </form>
-            
-                <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
-                </form>
-                
-                
-                </table>
-            </div>
-            </div>
-            <%}%>                        
-        
-        
+
     </body>
 </html>

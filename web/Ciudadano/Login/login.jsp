@@ -64,6 +64,10 @@
                             <input type='hidden' name='usu3' value='<%=cgsc.getNom()%>'>
                             <input type="submit" class="dropdown-item" name="res" value="Respuesta"></a>
                         </form>
+                        <form action="../Menu/MenuCiudadano.jsp" method="Post">
+                            <input type='hidden' name='usu2' value='<%=cgsc.getNom()%>'>
+                            <input type="submit" class="dropdown-item" name="men" value="Menu"></a>
+                        </form>
                         <%}%>    
                         <%
                         if (request.getParameter("per")!=null){
@@ -80,8 +84,14 @@
                         htt.setAttribute("nom1", dato);
                         response.sendRedirect("../Respuesta/Mostrar_Respuestas.jsp");
                         }
+                        else if (request.getParameter("men")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("usu2");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom1", dato);
+                        response.sendRedirect("../Menu/MenuCiudadano.jsp");
+                        }
                         %>
-                        <a class="dropdown-item" href="../../Menu/Vista/Ciudadano.php" name="ciu">Menu</a>
                             <div class="dropdown-divider">
                         </div> <a class="dropdown-item" href="../../../Cerrar.php">Cerrar Sesion</a>
                     </div>

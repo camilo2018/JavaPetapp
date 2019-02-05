@@ -41,7 +41,7 @@
 				 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="navbar-toggler-icon"></span>
-                    </button> <a class="navbar-brand" href="">PetApp</a>
+                    </button> <a class="navbar-brand" href="../Login/login.jsp">PetApp</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="navbar-nav ml-md-auto">
                             <a class="navbar-brand" href="">Usuario: <%=dat2%></a>
@@ -57,6 +57,10 @@
                         <form action="../Respuesta/Mostrar_Respuestas.jsp" method="Post">
                             <input type='hidden' name='usu3' value='<%=cgsc.getNom()%>'>
                             <input type="submit" class="dropdown-item" name="res" value="Respuesta"></a>
+                        </form>
+                        <form action="../Menu/MenuCiudadano.jsp" method="Post">
+                            <input type='hidden' name='usu2' value='<%=cgsc.getNom()%>'>
+                            <input type="submit" class="dropdown-item" name="men" value="Menu"></a>
                         </form>
                         <%}%>    
                         <%
@@ -74,8 +78,14 @@
                         htt.setAttribute("nom1", dato);
                         response.sendRedirect("../Respuesta/Mostrar_Respuestas.jsp");
                         }
-                        %> 
-                        <a class="dropdown-item" href="../../Menu/Vista/Ciudadano.php" name="ciu">Menu</a>
+                        else if (request.getParameter("men")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("usu2");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom1", dato);
+                        response.sendRedirect("../Menu/MenuCiudadano.jsp");
+                        }
+                        %>
                             <div class="dropdown-divider">
                         </div> <a class="dropdown-item" href="../../../Cerrar.php">Cerrar Sesion</a>
                     </div>
