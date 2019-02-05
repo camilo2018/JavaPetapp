@@ -23,6 +23,16 @@ private int ani;
     public GSSeguimientoAdmin() {
     }
 
+    public GSSeguimientoAdmin(int codp, String tel, String dir, String fij, String ced, int ani) {
+        this.codp = codp;
+        this.tel = tel;
+        this.dir = dir;
+        this.fij = fij;
+        this.ced = ced;
+        this.ani = ani;
+    }
+    
+
     public GSSeguimientoAdmin(int cods) {
         this.cods = cods;
     }
