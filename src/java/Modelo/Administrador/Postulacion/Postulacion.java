@@ -1,6 +1,7 @@
 package Modelo.Administrador.Postulacion;
 
 import Controlador.conexion;
+import Modelo.Administrador.Seguimiento.GSSeguimientoAdmin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -44,6 +45,19 @@ public class Postulacion {
         }catch(Exception e){
             
         }return R;
+    }
+    public ArrayList<GSSeguimientoAdmin> Consultapos(){
+        ArrayList<GSSeguimientoAdmin> s=new ArrayList<>();
+        try{
+            ps=cnn.prepareStatement("select * from seguimiento");
+            res=ps.executeQuery();
+            while(res.next()){
+                GSSeguimientoAdmin sp=new GSSeguimientoAdmin(res.getInt(1),res.getInt(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7));
+                s.add(sp);
+            }
+        }catch(Exception e){
+            
+        }return s;
     }
 
     public ArrayList<GSPostulacionAdmin> Consultar(){

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ConsultarSeguimiento
-    Created on : 4/02/2019, 05:03:07 PM
+    Document   : Resnegativa
+    Created on : 5/02/2019, 04:04:33 PM
     Author     : KnokinGm
 --%>
 

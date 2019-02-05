@@ -77,14 +77,14 @@
                         <th><img src="../<%=cgsc.getFot()%>" width="100" height="100"></th>
                         </tr>
                         
-               <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+               <form method='POST' action='../ResDenuncia/Respositiva.jsp'>
+               <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
+                    <th><input type='submit' name='acep' value='Aceptar' class='btn btn-info' ></th>
                 </form>
             
                 <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
+              
+                    <th><input type='submit' name='eliminar' value='Rechazar' class='btn btn-danger'></th>
                 </form>
                 
                 
