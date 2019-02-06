@@ -167,7 +167,7 @@
     </div>
     </form>  
 
-<form action="../../Seguimiento/Vista/Vista_Seguimiento.php">
+<form action="../Seguimiento/Continuar_Postulacion.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano"> 
         <div class="panel-heading" id="verde">
