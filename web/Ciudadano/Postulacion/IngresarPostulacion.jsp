@@ -43,7 +43,7 @@
            c=Integer.parseInt(request.getParameter("code"));
           
         %>
-    <label>Codigo Del Animal</label><input type="text" name="coda" value="<%=c%>" class="form-control">
+   <input type="hidden" name="coda" value="<%=c%>" class="form-control">
       <div class="form-group" id="bot">
       <input type="submit" name="ingpostu" value="Realizar Postulacion" class="btn btn-primary">
       </div>

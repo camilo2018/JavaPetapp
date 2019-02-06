@@ -45,4 +45,31 @@ public class Evento {
         }
         return R;
     }
+    public ArrayList<GSEventoAdmin> Consultar1(String pr){
+    ArrayList<GSEventoAdmin> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from jornada where codigo_jornada='"+pr+"'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                
+                GSEventoAdmin CF = new GSEventoAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+                R.add(CF);
+                
+                
+            }
+        } catch (Exception e) {
+        }
+        return R;
+    }
+    
+    public int Actualizar(GSEventoAdmin AF){
+        int x=0;
+        try {
+            ps=cnn.prepareStatement("call FunModificar_Eventos('"+AF.getCod()+"','"+AF.getFec()+"','"+AF.getLug()+"','"+AF.getDura()+"','"+AF.getDesc()+"')");
+            x=ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return x;
+    }
 }

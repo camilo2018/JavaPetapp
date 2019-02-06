@@ -16,14 +16,14 @@
 	<title>PetApp</title>
 </head>
 <body>
-	<header id="encabezado">
-    <form action="../../Login/registro.jsp">
+    <header id="encabezado">
+    <form action="../../Login/inicio.jsp">
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     </form>
 
-		<h1>Administrador</h1>
-		<img src="Imagenes1/Admin3.png" id="Avatar" >
-	</header>
+    <h1>Administrador</h1>
+	<img src="Imagenes1/Admin3.png" id="Avatar" >
+    </header>
 
   
 

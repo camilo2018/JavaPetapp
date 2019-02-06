@@ -24,7 +24,7 @@
 <body id="fondox">
 
 
-    <form action="../Consultar_Admin.jsp">
+    <form action="Consultar_Admin.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
         <center><div  id="insertar">

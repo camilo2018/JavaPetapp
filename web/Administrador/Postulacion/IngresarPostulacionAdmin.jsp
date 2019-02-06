@@ -23,7 +23,7 @@
 <body id="fondox">
 
 
-    <form action="Consultar_Animal.jsp" >
+    <form action="Consultar_Postulacion.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">

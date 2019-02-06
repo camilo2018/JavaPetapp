@@ -1,6 +1,6 @@
 <%-- 
-    Document   : IngresarAnimal_Adm
-    Created on : 23/11/2018, 08:29:17 AM
+    Document   : IngresarAnimal_Admin
+    Created on : 6/02/2019, 08:33:13 AM
     Author     : KnokinGm
 --%>
 
@@ -24,7 +24,11 @@
 <body id="fondox">
 
 
-    <form action="../../Administrador/Animal/Consultar_Animal.jsp" >
+
+   
+
+    <form action="Consultar_Animal.jsp" >
+
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">
