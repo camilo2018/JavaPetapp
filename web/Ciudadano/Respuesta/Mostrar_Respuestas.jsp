@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
 <%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
 <%@page import="Modelo.Respuesta.Respuesta"%>
@@ -66,7 +67,7 @@
                             <input type='hidden' name='usu2' value='<%=cgsc.getNom()%>'>
                             <input type="submit" class="dropdown-item" name="men" value="Menu"></a>
                         </form>
-                        <%}%>    
+                           
                         <%
                         if (request.getParameter("per")!=null){
                         HttpSession htt=request.getSession();
@@ -107,25 +108,25 @@
                 Ciudadano co = new Ciudadano();
                 dat=co.Consultar1(dat2);
                 GSCiudadanoAdmin cgsc2= new GSCiudadanoAdmin();
-                
-                for (int i = 0; i < dat.size() ; i++) {
-                        cgsc2=dat.get(i);
+                 
+                for (int i2 = 0; i2 < dat.size() ; i2++) {
+                        cgsc2=dat.get(i2);
                 %>
-                <input type='hidden' name='cedul' value='<%=cgsc2.getCed()%>'>
-                <%}%>
-        
+                
+                <%%>
         <form action="Menu/Ciudadano.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
             <h3 class="display-4" style="margin-top: 50px;">Respuesta</h3>
     	        <%
                 String ced=request.getParameter("cedul");
+                JOptionPane.showMessageDialog(null, cgsc2.getCed());
                 ArrayList<GSRespuesta> res = new ArrayList<>();
                 Respuesta res1 = new Respuesta();
-                res=res1.Consultar1(ced);
+                res=res1.Consultar1(cgsc2.getCed());
                 GSRespuesta res2= new GSRespuesta();
-                for (int i = 0; i < res.size() ; i++) {
-                        res2=res.get(i);
+                for (int i3 = 0; i3 < res.size() ; i3++) {
+                        res2=res.get(i3);
                 %>
             <div id="centro">
                 <div class="caja1">
@@ -169,7 +170,7 @@
                 </table>
             </div>
             </div>
-            <%}%>                        
+            <%}}}%>                        
         
         
     </body>
