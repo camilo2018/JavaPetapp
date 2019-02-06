@@ -46,16 +46,6 @@ public class ServletAdopcion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
        PrintWriter out = response.getWriter();
        
-          String men;
-                int ca,cs;
-               ca=Integer.parseInt(request.getParameter("animal"));
-               cs=Integer.parseInt(request.getParameter("segui"));
-               men=request.getParameter("mensaje");
-       
-         GSAdopcion con=new GSAdopcion(ca,cs,men);
-        Adopcion in=new Adopcion();
-        in.Ingresar_adop(con);
-        request.getRequestDispatcher("Administrador/Adopciones/IngresarAdopcion_Adm.jsp").forward(request, response);
        
     }
     

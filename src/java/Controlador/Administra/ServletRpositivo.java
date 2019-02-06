@@ -5,6 +5,8 @@
  */
 package Controlador.Administra;
 
+import Modelo.Administrador.Adopcion.Adopcion;
+import Modelo.Administrador.Adopcion.GSAdopcion;
 import Modelo.Administrador.Animal.GSAnimalAdmin;
 import Modelo.Administrador.ResPositiva.GSRespositiva;
 import Modelo.Administrador.ResPositiva.Rpositiva;
@@ -60,6 +62,9 @@ public class ServletRpositivo extends HttpServlet {
         GSAnimalAdmin con2=new GSAnimalAdmin(coda);
         Rpositiva in2=new Rpositiva();
         in2.EliminarAnim(con2);
+        GSAdopcion con3=new GSAdopcion(coda,ce,men);
+        Adopcion in3=new Adopcion();
+        in3.Ingresar_adop(con3);
         response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");
     }
   

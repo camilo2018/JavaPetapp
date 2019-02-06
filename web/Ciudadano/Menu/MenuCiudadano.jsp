@@ -116,13 +116,13 @@
           </div>
 
           <div class="col-sm">
-              <form action="">
+              <form action="../Animal/Consultar_Animal.jsp">
                 <input type="image" name="animal" src="Logo/Adoptar.png" height="250" width="250" id="animales">
               </form>
           </div>
 
           <div class="col-sm">
-                <form action="">
+                <form action="../Denuncias/Ingresar_Denuncia.jsp">
                   <input type="image" name="denuncia" src="Logo/Denuncia.png" height="250" width="250" id="denuncia">
                 </form>
           </div>
@@ -130,13 +130,13 @@
         
         <div class="row" id="icono2">
           <div class="col-sm">
-                <form action="../../Mascotas/Vista/Vista_Mascotas.php">
+                <form action="">
                   <input type="image" name="mascotas" src="Logo/Mascota.png" height="250" width="250" id="mascota">
                 </form>
           </div>
 
           <div class="col-sm">
-                <form action="../../Ciudadano/Vista/Vista_Ciudadano.php">
+                <form action="../Ciudadano/Consultar_Ciudadano.jsp">
                   <input type="image" name="datos" src="Logo/MisDatos.png" height="250" width="250" id="datos">
                 </form>
           </div>
