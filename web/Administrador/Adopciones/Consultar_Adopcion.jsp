@@ -14,17 +14,18 @@
    <title>Adopcion</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/EstiloIngresoAdopcion.css">
+        <link rel="stylesheet" href="CSS/EstiloIngresoAdopcion1.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   	<script src="JQ/jquery-3.3.1.min.js"></script>
         <script src="JQ/main.js"></script>
         
 </head>
     <body>
-
 	<form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
+        
+        
     <h3 class="display-4">Adopcion</h3>
     	        <%
                 ArrayList<GSAdopcion> dat = new ArrayList<>();
