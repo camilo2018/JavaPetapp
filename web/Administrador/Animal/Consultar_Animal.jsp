@@ -21,7 +21,7 @@
         
 </head>
     <body>
-        <form action="IngresarAnimal_Adm.jsp">
+        <form action="IngresarAnimal_Admin.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
 
