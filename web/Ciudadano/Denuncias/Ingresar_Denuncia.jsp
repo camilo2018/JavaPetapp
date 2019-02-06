@@ -30,7 +30,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
-    <form action="../../../PettAppJ/Ciudadano/Ciudadano/Menu/Ciudadano.jsp" >
+    <form action="../Menu/MenuCiudadano.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">

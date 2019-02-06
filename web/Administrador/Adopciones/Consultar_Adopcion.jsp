@@ -39,7 +39,7 @@
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc.getCod()%></th>
+                    <th><%=cgsc.getCodap()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -48,19 +48,15 @@
                 <div class="caja2">
                     <table class="table">
                         <tr>
-                        <th>Codigo</th>
-                        <th><%=cgsc.getCod()%></th>
-                        </tr>
-                        <tr>
                         <th>Animal</th>
                         <th><%=cgsc.getAni()%></th>
                         </tr>
                         <tr>
-                        <th>Seguimiento</th>            
-                        <th><%=cgsc.getSeg()%></th>
+                        <th>Propietario</th>
+                        <th><%=cgsc.getCed()%></th>
                         </tr>
                         <tr>
-                        <th>Mensaje</th>
+                        <th>Respuesta</th>
                         <th><%=cgsc.getMen()%></th>
                         </tr>
                         <tr>
