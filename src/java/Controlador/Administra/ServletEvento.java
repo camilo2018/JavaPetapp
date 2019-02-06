@@ -56,8 +56,8 @@ public class ServletEvento extends HttpServlet {
         GSEventoAdmin con=new GSEventoAdmin(0, fec, lug, dur, des);
         Evento in=new Evento();
         in.Ingresar_evento(con);
-        request.getRequestDispatcher("Administrador/Evento/IngresarEvento_Adm.jsp").forward(request, response);
-       
+        response.sendRedirect("Administrador/Evento/Consultar_Evento.jsp");
+
        
     }
     

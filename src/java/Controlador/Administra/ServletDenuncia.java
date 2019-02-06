@@ -116,7 +116,7 @@ public class ServletDenuncia extends HttpServlet {
         GSDenunciaAdmin con=new GSDenunciaAdmin(fec,des,ced,men,Url2);
         Denuncia in=new Denuncia();
         in.Ingresar_denuncia(con);
-        request.getRequestDispatcher("Ciudadano/Denuncias/Ingresar_Denuncia.jsp").forward(request, response);
+        response.sendRedirect("Ciudadano/Menu/MenuCiudadano.jsp");
 
        
     }

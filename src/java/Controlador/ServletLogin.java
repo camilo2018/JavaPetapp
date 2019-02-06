@@ -121,7 +121,7 @@ private int r;
             }
             else if(r==3){
             JOptionPane.showMessageDialog(null, "Veterinaria");
-            response.sendRedirect("Veterinaria/IndexVeterinaria.jsp");    
+            response.sendRedirect("Veterinaria/Login/loginV.jsp");    
             }
             else if(r==4){
             JOptionPane.showMessageDialog(null, "Ciudadano");

@@ -22,14 +22,14 @@
         
 </head>
     <body>
-	<form action="../Menu/Administrador.jsp">
-            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
-  	</form>
+	
         <form action="IngresarEvento_Adm.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
-        
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
+        <form action="../Menu/Administrador.jsp">
+            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
+  	</form>
+
     <h3 class="display-4">Evento</h3>
     	        <%
                 ArrayList<GSEventoAdmin> dat = new ArrayList<>();

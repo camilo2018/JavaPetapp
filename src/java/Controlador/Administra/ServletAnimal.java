@@ -70,7 +70,7 @@ public class ServletAnimal extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=nomb+"_"+nomfoto;
           
-          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal/"+nombre;
+          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal/"+nombre;
           
           String Url2=nombre;
           
@@ -90,7 +90,7 @@ public class ServletAnimal extends HttpServlet {
         GSAdoptado con2=new GSAdoptado(nomb,tip,ed,raz,tam,gen,col,Url2);
         Adopcion in2=new Adopcion();
         in2.Guardar_Adoptado(con2);
-        request.getRequestDispatcher("Administrador/Animal/IngresarAnimal_Adm.jsp").forward(request, response);
+        response.sendRedirect("Administrador/Animal/Consultar_Animal.jsp");
 
        
     }
