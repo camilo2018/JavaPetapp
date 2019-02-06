@@ -14,6 +14,12 @@ private int ado;
         this.ado = ado;
     }
 
+    public GSComentarios(String fec, String cue, int ado) {
+        this.fec = fec;
+        this.cue = cue;
+        this.ado = ado;
+    }
+
     public GSComentarios() {
     }
 

@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <title>Administrador</title>
+       <title>Postulacion</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/EstiloIngresoPostulacion.css">
@@ -32,7 +32,7 @@
         
             <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     
-    <h3 class="display-4">Administrador</h3>
+    <h3 class="display-4">Postulacion</h3>
     	        <%
                 ArrayList<GSPostulacionAdmin> dat = new ArrayList<>();
                 Postulacion co = new Postulacion();

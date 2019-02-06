@@ -73,8 +73,8 @@
                         <th><%=cgsc.getDesc()%></th>
                         </tr>    
                     
-                <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
+                <form method='POST' action='Modificar_Evento.jsp'>
+                    <input type='hidden' name='cod' value='<%=cgsc.getCod()%>'>
                     <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
                 </form>
             
@@ -88,5 +88,14 @@
             </div>
             </div>
             <%}%>
+            <%
+                if (request.getParameter("modificar")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("cod");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom", dato);
+                        response.sendRedirect("Modificar_Evento.jsp");
+                }
+            %>
     </body>
 </html>

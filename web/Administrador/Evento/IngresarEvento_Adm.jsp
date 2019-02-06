@@ -19,14 +19,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../../PettApp/Administrador/Evento/CSS/Estilo.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<body id="fondox">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../Ciudadano/CSS/Estilo.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="CSS/Estilo.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-</body>
-    <form action="../../PettApp/Administrador/Evento/Consultar_Evento.jsp">
+<body id="fondox">
+  
+
+    <form action="Consultar_Evento.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
 <div id="padre">

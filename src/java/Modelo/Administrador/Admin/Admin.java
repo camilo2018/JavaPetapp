@@ -69,6 +69,8 @@ public class Admin {
             }
             } catch (Exception e) {
             }
+        
+        JOptionPane.showMessageDialog(null, R);
             return R;
         }
     

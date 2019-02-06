@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <title>Administrador</title>
+       <title>Seguimiento</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/Estilo.css">
@@ -23,7 +23,7 @@
 </head>
     <body>
     
-        <form action="IngresarPostulacionAdmin.jsp">
+        <form action="IngresarSeguimiento_Adm.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
 
@@ -33,7 +33,7 @@
         
             <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     
-    <h3 class="display-4">Administrador</h3>
+    <h3 class="display-4">Seguimiento</h3>
     	        <%
                 ArrayList<GSSeguimientoAdmin> dat = new ArrayList<>();
                 Postulacion co = new Postulacion();
