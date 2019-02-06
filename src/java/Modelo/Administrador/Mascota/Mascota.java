@@ -50,4 +50,21 @@ public class Mascota {
             }
             return R;
     }
+    
+    public ArrayList<GSMascotaAdmin> Consultar1(String a){
+        ArrayList<GSMascotaAdmin> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from mascota where ced='"+a+"'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                
+                GSMascotaAdmin CF = new GSMascotaAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getString(8),res.getString(9));
+                R.add(CF);
+                
+                
+            }
+            } catch (Exception e) {
+            }
+            return R;
+    }
 }

@@ -1,16 +1,17 @@
+<%@page import="Modelo.Administrador.Mascota.Mascota"%>
+<%@page import="Modelo.Administrador.Mascota.GSMascotaAdmin"%>
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
 <%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
-<%@page import="Modelo.Administrador.Animal.Animal"%>
-<%@page import="Modelo.Administrador.Animal.GSAnimalAdmin"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Animal</title>
+<head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/Estilo.css">
+	<meta name="viewport" content="width=device-width,  user-scalabe=no, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="CSS/EstiloMascota.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -18,11 +19,11 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   	<script src="JQ/jquery-3.3.1.min.js"></script>
         <script src="JQ/main.js"></script>
-        
+        <title>Pet App</title>
 </head>
     <body>
-       
-    <%
+        
+        <%
         HttpSession ht = request.getSession();
         String dat2=(String)ht.getAttribute("nom1");
         %>
@@ -99,23 +100,36 @@
 			</nav>
 		</div>
 	</div>
-</div>    
-	
-    <h3 class="display-4" style="margin-top: 70px;">Animal</h3>
-    	        <%
-                ArrayList<GSAnimalAdmin> dat = new ArrayList<>();
-                Animal co = new Animal();
-                dat=co.Consultar();
-                GSAnimalAdmin cgsc2= new GSAnimalAdmin();
+</div>
+        
+                <%
+                ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
+                Ciudadano co = new Ciudadano();
+                dat=co.Consultar1(dat2);
+                GSCiudadanoAdmin cgsc2= new GSCiudadanoAdmin();
+                 
                 for (int i2 = 0; i2 < dat.size() ; i2++) {
                         cgsc2=dat.get(i2);
                 %>
-                <div id="centro">
-                <div class="caja1">
+                
+                <%%>
+        <form action="Menu/Ciudadano.jsp">
+            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
+  	</form>
+            <h3 class="display-4" style="margin-top: 50px;">Mascotas</h3>
+    	        <%
+                ArrayList<GSMascotaAdmin> res = new ArrayList<>();
+                Mascota res1 = new Mascota();
+                res=res1.Consultar1(cgsc2.getCed());
+                GSMascotaAdmin res2= new GSMascotaAdmin();
+                for (int i3 = 0; i3 < res.size() ; i3++) {
+                        res2=res.get(i3);
+                %>
+            <div class="caja1">
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc2.getNom()%></th>
+                    <th><%=res2.getNom()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -123,55 +137,55 @@
                 
                 <div class="caja2">
                     <table class="table">
-                        <form method='POST' action='../Postulacion/IngresarPostulacion.jsp'>
-                        <input type='hidden' name='code' value='<%=cgsc2.getCod()%>'>
-                  <input type='image' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
-                  <h1>Adoptame</h1>
-                
-                </form>
-                        <tr>
-                        <th><img src="../../Uploads/FotosAnimal/<%=cgsc2.getTam()%>" width="100" height="100"></th>
-                        </tr>
                         <tr>
                         <th>Codigo</th>
-                        <th><%=cgsc2.getCod()%></th>
+                        <th><%=res2.getCod()%></th>
                         </tr>
                         <tr>
                         <th>Nombre</th>
-                        <th><%=cgsc2.getNom()%></th>
+                        <th><%=res2.getNom()%></th>
                         </tr>
                         <tr>
-                        <th>Tipo</th>            
-                        <th><%=cgsc2.getTip()%></th>
+                        <tr>
+                        <th>Descendencia</th>
+                        <th><%=res2.getDes()%></th>
+                        </tr>
+                        <tr>
+                        <th>Estado</th>
+                        <th><%=res2.getEst()%></th>
+                        </tr>
+                        <tr>
+                        <th>Tipo</th>
+                        <th><%=res2.getTip()%></th>
                         </tr>
                         <tr>
                         <th>Edad</th>
-                        <th><%=cgsc2.getEda()%></th>
+                        <th><%=res2.getEda()%></th>
                         </tr>
                         <tr>
                         <th>Raza</th>
-                        <th><%=cgsc2.getRaz()%></th>
+                        <th><%=res2.getRaz()%></th>
                         </tr>
                         <tr>
-
-                        <th>Tamaño</th>
-                        <th><%=cgsc2.getGen()%></th>
+                        <th>Cedula</th>
+                        <th><%=res2.getCed()%></th>
                         </tr>
-                        <th>Genero</th>
-                        <th><%=cgsc2.getCol()%></th>
-                        <tr>
-                        <th>Color</th>
-                        <th><%=cgsc2.getFot()%></th>
-                        </tr> 
-                        
-                        
-              
+                        <th>Foto</th>
+                        <th><img src="../<%=res2.getFot()%>" width="100" height="100"></th>
+                        </tr>
+                    
+                <form method='POST' action=''>
+                    <input type='hidden' name='cod' value=''>
+                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+                </form>
+            
                 
                 
                 </table>
             </div>
             </div>
-            <%}}%>
+            <%}}}%>                        
+        
+        
     </body>
 </html>
-
