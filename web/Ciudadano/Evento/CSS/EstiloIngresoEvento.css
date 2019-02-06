@@ -1,5 +1,5 @@
 h3{
-    margin-top: 50px;
+    margin-top: 500px;
 }
 #centro{
     background-color: transparent;
@@ -34,7 +34,6 @@ h3{
 
 #vol{
 float: left;
-margin-left: -72px;
 margin-top: 5px;
 margin-bottom:50px;
 }
@@ -92,7 +91,6 @@ p{
 }
     #vol{
     float: left;
-    margin-left: -72px;
     margin-top: 5px;
     }
 }

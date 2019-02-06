@@ -28,7 +28,6 @@
 	<form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Animal</h3>
     	        <%
                 ArrayList<GSAnimalAdmin> dat = new ArrayList<>();

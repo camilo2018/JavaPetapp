@@ -22,10 +22,6 @@
         
 </head>
     <body>
-	
-        <form action="IngresarEvento_Adm.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
-  	</form>
         <form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>

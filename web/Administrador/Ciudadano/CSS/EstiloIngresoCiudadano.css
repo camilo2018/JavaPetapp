@@ -31,7 +31,6 @@
 
 #vol{
 float: left;
-margin-left: -72px;
 margin-top: 5px;
 margin-bottom:50px;
 }
@@ -89,7 +88,6 @@ p{
 }
     #vol{
     float: left;
-    margin-left: -72px;
     margin-top: 5px;
     }
 }

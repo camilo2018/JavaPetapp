@@ -30,9 +30,6 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
-    <form action="../Menu/MenuCiudadano.jsp" >
-    <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
-    </form>
 <div id="padre">
 	<div id="insertar" class="form-group">
 	<h1>Realizar Denuncia</h1>

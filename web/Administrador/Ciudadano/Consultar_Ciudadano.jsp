@@ -21,15 +21,9 @@
         
 </head>
     <body>
-        <form action="../Ciudadano/IngresarCiudadano_Adm.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
-  	</form>
-
-    
 	<form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Ciudadano</h3>
     	        <%
                 ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
