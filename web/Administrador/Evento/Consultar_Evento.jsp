@@ -26,7 +26,7 @@
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
 
-    <h3 class="display-4">Evento</h3>
+    <h3 class="display-4">Eventos</h3>
     	        <%
                 ArrayList<GSEventoAdmin> dat = new ArrayList<>();
                 Evento co = new Evento();

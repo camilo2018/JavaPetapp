@@ -35,6 +35,25 @@
     <label>Direccion de Contacto</label><input type="text" name="direccion" required="" class="form-control">
     <label>Telefono Fijo</label><input type="number" name="fijo"  class="form-control">
     <label>Certificado Laboral</label><input id="inp" type="file" name="IMG" required="">
+     </br>
+    <label>Fotocopia de Cedula</label><input id="inp" type="file" name="Cpf" required="">
+     </br>
+    <label>Estrato</label><input id="est" type="number" name="estrato" required="" class="form-control">
+    <label>Con cuantas Personas reside?</label><input id="resi" type="number" name="residentes" required="" class="form-control">
+    <label>Zona en la que esta ubicada su Vivienda</label><select name="ubicacion" id="ubi" required="" class="form-control">
+        <option>Ubicacion</option>
+        <option value="Rural">Rural</option>
+        <option value="Urbano">Urbano</option>
+    </select>
+    <label>Tipo de Vivienda</label><select name="tvivienda" id="tvi" required="" class="form-control">
+        <option>Tipo</option>
+        <option value="Casa">Casa</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Finca">Finca</option>
+    </select>
+    <label>puntaje</label><input type="number" name="rpuntaje" id="rp" required="" class="form-control">
+     </br>
+    <label>Recibo Publico</label><input type="file" name="recibo" required="" id="inp">
     </br>
     <lablel>Cedula</lablel><input type="text" name="cedula" required="" class="form-control">
        <%
