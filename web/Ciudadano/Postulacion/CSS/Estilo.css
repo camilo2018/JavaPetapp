@@ -9,7 +9,11 @@
 	height: 30px;
 
 }
-
+#foced{
+    color:transparent;
+	width: 150px;
+	height: 30px;
+}
 #vol{
 float: left;	
 }

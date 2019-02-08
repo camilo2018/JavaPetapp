@@ -1,3 +1,6 @@
+ <%@page import="Modelo.UsuarioVeter.UsuarioVeter"%>
+<%@page import="Modelo.UsuarioVeter.GSUsuarioveter"%>
+<%@page import="java.util.ArrayList"%>
 <%-- 
     Document   : login
     Created on : 26/10/2018, 09:52:55 AM
@@ -23,7 +26,83 @@
 
 </head>
 <body>
-
+  <%
+        HttpSession ht = request.getSession();
+        String dat1=(String)ht.getAttribute("nom");
+        %>
+        <%
+                ArrayList<GSUsuarioveter> dat = new ArrayList<>();
+                UsuarioVeter co = new UsuarioVeter();
+                dat=co.Consultar2(dat1);
+                GSUsuarioveter cgsc= new GSUsuarioveter();
+                for (int i = 0; i < dat.size() ; i++) {
+                        cgsc=dat.get(i);
+                %>
+                    
+                
+            
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark fixed-top">
+               
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="navbar-toggler-icon"></span>
+                    </button> <a class="navbar-brand" href="">PetApp</a>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="navbar-nav ml-md-auto">
+                            <a class="navbar-brand" href="">Usuario: <%=dat1%></a>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                                    <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class="fotomod" 
+                                      style="width:50px;height:50px;border-radius:200px 200px;"></a>     
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <form action="../Animal/Consultar_Animal.jsp" method="Post">
+                            <input type='hidden' name='usu4' value='<%=cgsc.getNom()%>'>
+                            <input type="submit" class="dropdown-item" name="per" value="Perfil"></a>
+                        </form>
+                        <form action="../Respuesta/Mostrar_Respuestas.jsp" method="Post">
+                            <input type='hidden' name='usu3' value='<%=cgsc.getNom()%>'>
+                            <input type="submit" class="dropdown-item" name="res" value="Respuesta"></a>
+                        </form>
+                        <form action="../Menu/MenuCiudadano.jsp" method="Post">
+                            <input type='hidden' name='usu2' value='<%=cgsc.getNom()%>'>
+                            <input type="submit" class="dropdown-item" name="men" value="Menu"></a>
+                        </form>
+                        <%}%>    
+                        <%
+                        if (request.getParameter("per")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("usu4");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom1", dato);
+                        response.sendRedirect("../Animal/Consultar_Animal.jsp");
+                        }
+                        else if (request.getParameter("res")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("usu3");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom1", dato);
+                        response.sendRedirect("../Respuesta/Mostrar_Respuestas.jsp");
+                        }
+                        else if (request.getParameter("men")!=null){
+                        HttpSession htt=request.getSession();
+                        String naom=request.getParameter("usu2");
+                        String dato= new String(naom);
+                        htt.setAttribute("nom1", dato);
+                        response.sendRedirect("../Menu/MenuCiudadano.jsp");
+                        }
+                        %>
+                            <div class="dropdown-divider">
+                        </div> <a class="dropdown-item" href="../../../Cerrar.php">Cerrar Sesion</a>
+                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
 <header >	
 		<div class="logotipo">
 		<h1>Pet App</h1>
