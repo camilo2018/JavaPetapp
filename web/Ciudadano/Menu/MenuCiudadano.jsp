@@ -95,8 +95,8 @@
 </div>    
 <header id="encabezado">
 
-    <h1>Ciudadanoxp</h1>
-    <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class='fotomod' style='width:250px;height:250px;border-radius:200px 200px; @mediascreen and (max-width:740px) {width:100px;height:100px;border-radius:200px 200px;}'>
+    <h1>Ciudadano</h1>
+    <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class='fotomod' style='width:250px;height:250px;border-radius:200px 200px;'>
     <h2><%=dat2%></h2>
     </header>
 
