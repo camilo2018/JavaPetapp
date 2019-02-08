@@ -17,13 +17,20 @@ public class Postulacion {
     
     public void Ingresar_postulacion(GSPostulacionAdmin ing){
         try{
-            ps=cnn.prepareStatement("insert into postulacion (telefono_contacto,direccion_contacto,telefono_fijo,certificado_laboral,cedu,codigo_animal)values(?,?,?,?,?,?)");
+            ps=cnn.prepareStatement("insert into postulacion (telefono_contacto,direccion_contacto,telefono_fijo,certificado_laboral,cedula_pdf,estrato,residentes,ubicacion,tipo_vivienta,resultado_puntos,recibo_pub,cedu,codigo_animal)values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
        ps.setString(1,ing.getTel());
        ps.setString(2,ing.getDir());
        ps.setString(3,ing.getFij());
        ps.setString(4,ing.getCer());
-       ps.setString(5,ing.getCed());
-       ps.setInt(6,ing.getCoda());
+       ps.setString(5,ing.getCpf());
+       ps.setInt(6,ing.getEst());
+       ps.setInt(7,ing.getResi());
+       ps.setString(8,ing.getUbi());
+       ps.setString(9,ing.getTvi());
+       ps.setInt(10,ing.getRpun());
+       ps.setString(11,ing.getReci());
+       ps.setString(12,ing.getCed());
+       ps.setInt(13,ing.getCoda());
        ps.executeUpdate();
        JOptionPane.showMessageDialog(null,"Postulacion Ingresado Correctamente");
         
@@ -39,7 +46,7 @@ public class Postulacion {
             ps=cnn.prepareStatement("select * from postulacion");
             res=ps.executeQuery();
             while(res.next()){
-                GSPostulacionAdmin cp=new GSPostulacionAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7));
+                GSPostulacionAdmin cp=new GSPostulacionAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getString(9),res.getString(10),res.getInt(11),res.getString(12),res.getString(13),res.getInt(14));
                 R.add(cp);
             }
         }catch(Exception e){
@@ -67,7 +74,7 @@ public class Postulacion {
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSPostulacionAdmin CF = new GSPostulacionAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7));
+                GSPostulacionAdmin CF = new GSPostulacionAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getString(9),res.getString(10),res.getInt(11),res.getString(12),res.getString(13),res.getInt(14));
                 R.add(CF);
                 
                 

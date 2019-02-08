@@ -145,10 +145,10 @@
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
-          <h1>Mascotas</h1>
+          <h1>Veterinaria</h1>
         </div>
         <div class="panel-body"><center>
-          <input type="image" name="Mascotas" src="Imagenes1/Mascotas.png" class="img-responsive slideanim" id="logoimagen"></center>
+          <input type="image" name="Veterinarias" src="Imagenes1/Veterinaria.png" class="img-responsive slideanim" id="logoimagen"></center>
         </div>
       </div>      
     </div>

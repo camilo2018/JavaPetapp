@@ -93,20 +93,26 @@ public class ServletPostulacion1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
        PrintWriter out = response.getWriter();
        
-         String tel,dir,fij,ced;
-        int coda;
+         String tel,dir,fij,ced,ubi,tvi;
+        int coda,est,resi,rpun;
         tel=request.getParameter("telefono");
         dir=request.getParameter("direccion");
         fij=request.getParameter("fijo");
-         Part foto=request.getPart("IMG");
-          ced=request.getParameter("cedula");
+        est=Integer.parseInt(request.getParameter("estrato"));
+        resi=Integer.parseInt(request.getParameter("residentes"));
+        ubi=request.getParameter("ubicacion");
+        tvi=request.getParameter("tvivienda");
+        rpun=Integer.parseInt(request.getParameter("rpuntaje"));
+        ced=request.getParameter("cedula");
         coda=Integer.parseInt(request.getParameter("coda"));
-          String nomfoto=foto.getSubmittedFileName();
-          String nombre=ced+"_"+nomfoto;
-          
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Certificados\\"+nombre;
-          
-          String Url2=nombre;
+        Part foto=request.getPart("IMG");
+        Part foto2=request.getPart("Cpf");
+        Part foto3=request.getPart("recibo");
+             
+        String nomfoto=foto.getSubmittedFileName();
+        String nombre=ced+"_"+nomfoto;
+        String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Certificados\\"+nombre;
+        String Url2=nombre;
           
           InputStream file=foto.getInputStream();
           File f=new File(Url);
@@ -116,7 +122,31 @@ public class ServletPostulacion1 extends HttpServlet {
               sal.write(num);
               num=file.read();
           }
-        GSPostulacionAdmin con=new GSPostulacionAdmin(tel,dir,fij,Url2,ced,coda);
+          String nomfoto2=foto2.getSubmittedFileName();
+          String nombre2=ced+"_"+nomfoto2;
+          String Url3="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FCedulas\\"+nombre2;
+          String Url4=nombre2;
+          InputStream file2=foto2.getInputStream();
+          File f2=new File(Url3);
+          FileOutputStream sal2=new FileOutputStream(f2);
+          int num2=file2.read();
+          while(num2!=-1){
+              sal2.write(num2);
+              num2=file2.read();
+          }
+          String nomfoto3=foto3.getSubmittedFileName();
+          String nombre3=ced+"_"+nomfoto3;
+          String Url5="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Recibos\\"+nombre3;
+          String Url6=nombre3;
+          InputStream file3=foto3.getInputStream();
+          File f3=new File(Url5);
+          FileOutputStream sal3=new FileOutputStream(f3);
+          int num3=file3.read();
+          while(num3!=-1){
+              sal3.write(num3);
+              num3=file3.read();
+          }
+        GSPostulacionAdmin con=new GSPostulacionAdmin(tel,dir,fij,Url2,Url4,est,resi,ubi,tvi,rpun,Url6,ced,coda);
         Postulacion in=new Postulacion();
         in.Ingresar_postulacion(con);
         response.sendRedirect("Ciudadano/Animal/Consultar_Animal.jsp");
