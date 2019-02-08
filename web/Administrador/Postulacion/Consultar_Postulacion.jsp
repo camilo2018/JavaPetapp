@@ -67,6 +67,34 @@
                         <th><%=cgsc.getCer()%></th>
                         </tr>
                         <tr>
+                        <th>Fotocopia Cedula</th>
+                        <th><%=cgsc.getCpf()%></th>
+                        </tr>
+                        <tr>
+                         <th>Estrato</th>
+                         <th><%=cgsc.getEst()%></th>
+                        </tr>
+                        <tr>
+                          <th>Cantidad de Residentes</th>
+                          <th><%=cgsc.getResi()%></th>
+                        </tr>
+                        <tr>
+                        <th>Ubicacion de Vivienda</th>
+                        <th><%=cgsc.getUbi()%></th>
+                        </tr>
+                        <tr>
+                         <th>Tipo de Vivienda</th>
+                         <th><%=cgsc.getTvi()%></th>
+                        </tr>
+                        <tr>
+                            <th>Puntaje</th>
+                            <th><%=cgsc.getRpun()%></th>
+                        </tr>
+                        <tr>
+                            <th>Recibo Publico</th>
+                            <th><%=cgsc.getReci()%></th>
+                        </tr>
+                        <tr>
                         <th>Cedula</th>
                         <th><%=cgsc.getCed()%></th>
                         </tr>
