@@ -109,19 +109,19 @@
     <h1>GESTIONAR</h1>
      
         <div class="row" id="icono">
-          <div class="col">
+          <div class="col-sm">
               <form action="../Evento/Consultar_Evento.jsp">
                 <input type="image" name="eventoss" src="Logo/evento.png" height="250" width="250" id="eventos"> 
               </form>
           </div>
 
-          <div class="col">
+          <div class="col-sm">
               <form action="../Animal/Consultar_Animal.jsp">
                 <input type="image" name="animal" src="Logo/Adoptar.png" height="250" width="250" id="animales">
               </form>
           </div>
 
-          <div class="col">
+          <div class="col-sm">
                 <form action="../Denuncias/Ingresar_Denuncia.jsp">
                   <input type="image" name="denuncia" src="Logo/Denuncia.png" height="250" width="250" id="denuncia">
                 </form>
@@ -129,13 +129,13 @@
         </div>
         
         <div class="row" id="icono2">
-          <div class="col">
+          <div class="col-sm">
                 <form action="../MAscota/Mostrar_Mascota.jsp">
                   <input type="image" name="mascotas" src="Logo/Mascota.png" height="250" width="250" id="mascota">
                 </form>
           </div>
 
-          <div class="col">
+          <div class="col-sm">
                 <form action="../Ciudadano/Consultar_Ciudadano.jsp">
                   <input type="image" name="datos" src="Logo/MisDatos.png" height="250" width="250" id="datos">
                 </form>
