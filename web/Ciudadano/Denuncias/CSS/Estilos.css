@@ -3,7 +3,7 @@
 	background-image: url("../Imagenes/Administrador.jpg")
 }
 #inp{
-    
+        margin-left: 50px;
 	color:transparent;
 	width: 150px;
 	height: 30px;
@@ -29,6 +29,17 @@ float: right;
   	padding: 0 1rem;
   	margin: 1rem;
 }
+    
+h1{
+    color: white;
+}
+
+    label{
+        margin-top: 10px;
+        color: #ffffff;
+    }
+    
+
 #insertar{
 	margin-top: 8%;
 	width: 300px;
@@ -61,9 +72,20 @@ float: right;
     border: 1px solid green;
     max-width: 80%;
 } 
-}
+
 #vol{
 	position: absolute;
 	top: 5px;
 	left: 5px;
+}
+
+h1{
+    color: black;
+}
+
+    label{
+        margin-top: 10px;
+        color: black;
+    }
+
 }

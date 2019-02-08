@@ -107,16 +107,17 @@
 <div id="padre">
 	<div id="insertar" class="form-group">
 	<h1>Realizar Denuncia</h1>
+        
         <form action="../../ServletDenuncia" enctype="multipart/form-data" method="Post">
  	<label>Fecha</label><input type="date" name="fecha" required="" class="form-control">
-    <label>Tipo</label><select name="tipo" required="" class="form-control">
+        <label>Tipo</label><select name="tipo" required="" class="form-control">
         <option>Tipo de Denuncia</option>
                 <option value="Maltrato">Maltrato</option>
                 <option value="Abandono">Abandono</option>
     </select>
     <label>Cedula del Denunciante</label><input type="text" name="cedula" required="" class="form-control">
     <label>Denuncia</label><input type="text" name="denuncia" required="" class="form-control">
-    <label>Evidencia</label><input id="inp" type="file" name="IMG" >
+    <label>Evidencia</label><br><input id="inp" type="file" name="IMG" >
       <div class="form-group" id="bot">
       <input type="submit" name="denunci" value="Realizar Denuncia" class="btn btn-primary">
       </div>

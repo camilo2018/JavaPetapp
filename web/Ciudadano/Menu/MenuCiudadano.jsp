@@ -130,7 +130,7 @@
         
         <div class="row" id="icono2">
           <div class="col">
-                <form action="../MAscota/Mostrar_Mascota.jsp">
+                <form action="../Mascota/Mostrar_Mascota.jsp">
                   <input type="image" name="mascotas" src="Logo/Mascota.png" height="250" width="250" id="mascota">
                 </form>
           </div>

@@ -109,7 +109,7 @@ footer{
 @media screen and (max-width:740px) {
 
 #icono{
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 #icono2{
@@ -117,28 +117,28 @@ footer{
 }
 
 #eventos{
-	height: 200px;
-	width: 200px;
+	height: 80px;
+	width: 80px;
 }
 
 #animales{
-	height: 200px;
-	width: 200px;
+	height: 80px;
+	width: 80px;
 }
 
 #denuncia{
-	height: 200px;
-	width: 200px;
+	height: 80px;
+	width: 80px;
 }
 
 #mascota{
-	height: 200px;
-	width: 200px;
+	height: 80px;
+	width: 80px;
 }
 
 #datos{
-	height: 200px;
-	width:  200px;
+	height: 80px;
+	width: 80px;
 }
 
 }
