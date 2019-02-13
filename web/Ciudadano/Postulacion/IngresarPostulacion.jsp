@@ -94,14 +94,6 @@
       </div>
      
     </form>
-
-        
-        <input type="hidden" name="coda" value="<%=c%>" class="form-control">
-        <div class="form-group" id="bot">
-            
-        <input type="submit" name="ingpostu" value="Realizar Postulacion1" class="btn btn-primary">
-        </div>
-        </form>
         
 
 </div>
