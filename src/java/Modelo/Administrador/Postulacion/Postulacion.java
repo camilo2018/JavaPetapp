@@ -59,7 +59,7 @@ public class Postulacion {
             ps=cnn.prepareStatement("select * from seguimiento");
             res=ps.executeQuery();
             while(res.next()){
-                GSSeguimientoAdmin sp=new GSSeguimientoAdmin(res.getInt(1),res.getInt(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7));
+                GSSeguimientoAdmin sp=new GSSeguimientoAdmin(res.getInt(1),res.getInt(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getInt(8),res.getInt(9),res.getString(10),res.getString(11),res.getInt(12),res.getString(13),res.getString(14),res.getInt(15));
                 s.add(sp);
             }
         }catch(Exception e){

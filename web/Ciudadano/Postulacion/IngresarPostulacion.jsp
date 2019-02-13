@@ -61,11 +61,13 @@
            
            c=Integer.parseInt(request.getParameter("code"));
           
+       
         %>
    <input type="hidden" name="coda" value="<%=c%>" class="form-control">
       <div class="form-group" id="bot">
       <input type="submit" name="ingpostu" value="Realizar Postulacion" class="btn btn-primary">
       </div>
+     
     </form>
 </div>
 </div>

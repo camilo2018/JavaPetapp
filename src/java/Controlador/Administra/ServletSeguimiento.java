@@ -5,20 +5,28 @@
  */
 package Controlador.Administra;
 
+import Modelo.Administrador.Postulacion.GSPostulacionAdmin;
+import Modelo.Administrador.Postulacion.Postulacion;
 import Modelo.Administrador.Seguimiento.GSSeguimientoAdmin;
 import Modelo.Administrador.Seguimiento.Seguimiento;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author SENA
  */
+@MultipartConfig
 @WebServlet(name = "ServletSeguimiento", urlPatterns = {"/ServletSeguimiento"})
 public class ServletSeguimiento extends HttpServlet {
 
@@ -46,20 +54,29 @@ public class ServletSeguimiento extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        int codp,codan;
-        String tel,dir,fij,ced;
-               codp=Integer.parseInt(request.getParameter("codigo"));
-               tel=request.getParameter("telefono");
-               dir=request.getParameter("direccion");
-               fij=request.getParameter("fijo");
-               ced=request.getParameter("cedula");
-               codan=Integer.parseInt(request.getParameter("animal"));
-         GSSeguimientoAdmin con=new GSSeguimientoAdmin(codp,tel,dir,fij,ced,codan);
+      String tel,dir,fij,ced,ubi,tvi,cer,cpf,rpub;
+        int codp,coda,est,resi,rpun;
+        codp=Integer.parseInt(request.getParameter("codigo"));
+        tel=request.getParameter("telefono");
+        dir=request.getParameter("direccion");
+        fij=request.getParameter("fijo");
+        cer=request.getParameter("cerp");
+        cpf=request.getParameter("cpf");
+        est=Integer.parseInt(request.getParameter("est"));
+        resi=Integer.parseInt(request.getParameter("resi"));
+        ubi=request.getParameter("ubi");
+        tvi=request.getParameter("tvi");
+        rpun=Integer.parseInt(request.getParameter("repun"));
+        rpub=request.getParameter("rpub");
+        ced=request.getParameter("cedula");
+        coda=Integer.parseInt(request.getParameter("animal"));
+   
+        GSSeguimientoAdmin con=new GSSeguimientoAdmin(codp,tel,dir,fij,cer,cpf,est,resi,ubi,tvi,rpun,rpub,ced,coda);
         Seguimiento in=new Seguimiento();
         in.Ingresar_segui(con);
         response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");
 
-    }
+ }
      
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
