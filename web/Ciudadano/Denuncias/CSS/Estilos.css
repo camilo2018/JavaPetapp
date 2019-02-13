@@ -1,6 +1,13 @@
 
 #fondox{
-	background-image: url("../Imagenes/Administrador.jpg")
+	background: #d6d3d6;
+        background: -moz-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, #d6d3d6), color-stop(47%, #a3a3a3), color-stop(100%, #696969));
+        background: -webkit-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: -o-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: -ms-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: linear-gradient(to right, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d3d6', endColorstr='#696969', GradientType=1 );
 }
 #inp{
         margin-left: 50px;
