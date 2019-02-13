@@ -41,7 +41,7 @@
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc.getCods()%></th>
+                    <th><%=cgsc.getCodp()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -51,7 +51,7 @@
                     <table class="table">
                         <tr>
                         <th>Codigo del Seguimiento</th>
-                        <th><%=cgsc.getCods()%></th>
+                        <th><%=cgsc.getCod()%></th>
                         </tr>
                         <tr>
                         <th>Codigo de Postulacion</th>
@@ -70,12 +70,44 @@
                         <th><%=cgsc.getFij()%></th>
                         </tr>
                         <tr>
+                        <th>Certificado Laboral</th>
+                        <th><%=cgsc.getCer()%></th>
+                        </tr>
+                        <tr>
+                        <th>Fotocopia de Cedula</th>
+                        <th><%=cgsc.getCpf()%></th>
+                        </tr>
+                        <tr>
+                        <th>Estrato</th>
+                        <th><%=cgsc.getEst()%></th>
+                        </tr>
+                        <tr>
+                        <th>Residentes</th>
+                        <th><%=cgsc.getResi()%></th>
+                        </tr>
+                        <tr>
+                        <th>Ubicacion de la Vivienda</th>
+                        <th><%=cgsc.getUbi()%></th>    
+                        </tr>
+                        <tr>
+                        <th>Tipo de Vivienda</th>
+                        <th><%=cgsc.getTvi()%></th>
+                        </tr>
+                        <tr>
+                        <th>Puntaje</th>
+                        <th><%=cgsc.getRpun()%>/20</th>
+                        </tr>
+                        <tr>
+                        <th>Recibo Publico</th>
+                        <th><%=cgsc.getReci()%></th>
+                        </tr>
+                        <tr>
                         <th>Cedula</th>
                         <th><%=cgsc.getCed()%></th>
                         </tr>
                         <tr>
                         <th>Animal</th>
-                        <th><%=cgsc.getAni()%></th>
+                        <th><%=cgsc.getCoda()%></th>
                         </tr>
                     <tr>
                     
@@ -85,7 +117,7 @@
                     <input type='hidden' name='direccion' value='<%=cgsc.getDir()%>'>
                     <input type='hidden' name='fijo' value='<%=cgsc.getFij()%>'>
                     <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
-                    <input type='hidden' name='animal' value='<%=cgsc.getAni()%>'>
+                    <input type='hidden' name='animal' value='<%=cgsc.getCoda()%>'>
                     <th><input type='submit' name='respa' value='Aceptar' class='btn btn-info' ></th>
                 </form>
             

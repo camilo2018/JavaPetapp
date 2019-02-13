@@ -88,7 +88,7 @@
                         </tr>
                         <tr>
                             <th>Puntaje</th>
-                            <th><%=cgsc.getRpun()%></th>
+                            <th><%=cgsc.getRpun()%>/20</th>
                         </tr>
                         <tr>
                             <th>Recibo Publico</th>
@@ -104,11 +104,19 @@
                         </tr>
                     <tr>
                     
-                <form method='POST' action='../../ServletSeguimiento'>
+                <form method='POST' action='../../ServletSeguimiento' enctype="multipart/form-data">
                     <input type='hidden' name='codigo' value='<%=cgsc.getCod()%>'>
                     <input type='hidden' name='telefono' value='<%=cgsc.getTel()%>'>
                     <input type='hidden' name='direccion' value='<%=cgsc.getDir()%>'>
                     <input type='hidden' name='fijo' value='<%=cgsc.getFij()%>'>
+                    <input type='hidden' name='cerp' value='<%=cgsc.getCer()%>'>
+                    <input type='hidden' name='cpf' value='<%=cgsc.getCpf()%>'>
+                    <input type='hidden' name='est' value='<%=cgsc.getEst()%>'>
+                    <input type='hidden' name='resi' value='<%=cgsc.getResi()%>'>
+                    <input type='hidden' name='ubi' value='<%=cgsc.getUbi()%>'>
+                    <input type='hidden' name='tvi' value='<%=cgsc.getTvi()%>'>
+                    <input type='hidden' name='repun' value='<%=cgsc.getRpun()%>'>
+                    <input type='hidden' name='rpub' value='<%=cgsc.getReci()%>'>
                     <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
                     <input type='hidden' name='animal' value='<%=cgsc.getCoda()%>'>
                     <th><input type='submit' name='seguimien' value='Seguimiento' class='btn btn-info' ></th>
