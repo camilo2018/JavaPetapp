@@ -19,136 +19,122 @@
 
   </head>
   <body>
-
+        <%
+            HttpSession ht = request.getSession();
+            String dat1=request.getParameter("res1");
+            String dat2=request.getParameter("res2");
+            String dat3=request.getParameter("res3");
+            String dat4=request.getParameter("res4");
+            String dat5=request.getParameter("res5");
+            String dat6=request.getParameter("res6");
+        %>
+        <p>res1</p><%=dat1%>
+        <p>res2</p><%=dat2%>
+        <p>res3</p><%=dat3%>
+        <p>res4</p><%=dat4%>
+        <p>res5</p><%=dat5%>
+        <p>res6</p><%=dat6%>
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			 <h1>Encuesta</h1>
+			<h1>Encuesta</h1>
+                        <form action="Pagina3.jsp" method="Post">
 			<div class="row">
 				<div class="col-md-6">
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">7. ¿En el nucleo familiar alguna persona es alergica a los animales?</legend>
-					      <div class="col-sm-12">
+                                    <fieldset class="form-group">
+                                       <div class="row">
+                                        <fieldset>
+                                            <legend>7. ¿En el núcleo familiar  alguna persona es alérgica a los animales?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res7" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res7" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">8. ¿Reconoce que en caso de mudarse de la propiedad actual debe llevarse con usted a la mascota?</legend>
-					      <div class="col-sm-12">
+                                        </fieldset>
+                                    <fieldset>
+                                            <legend>8. ¿Reconoce que en caso de mudarse de la propiedad actual, debe llevarse con usted a la mascota? <abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res8" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res8" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">9. ¿Conoce los gastos economicos que implica tener una mascota?</legend>
-					      <div class="col-sm-12">
+                                    </fieldset> 
+                                    <fieldset>
+                                            <legend>9. ¿Conoce los gastos económicos que implica tener una mascota? <abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res9" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res9" id="r2" value="0"><label for="r2">Naur</label>
+					          </label>
+					        </div>
+                                            </div>
+					    </div>
+                                    </fieldset>
+                                    </fieldset>
+                                </div>
+                           <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                       <div class="row">
+                                        <fieldset>
+                                            <legend>10. ¿Está dispuesto a recibir capacitación sobre tenencia responsable de la mascota? <abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
+					        <div class="form-check" style="margin-left:20px;">
+					          <input type="radio" required name="res10" id="r1" value="1" ><label for="r1">Si </label>
+					        </div>
+					        <div class="form-check" style="margin-left:20px;">
+					          <input type="radio" required name="res10" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					  
-				</div>
-				<div class="col-md-6">
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">10. ¿Esta dispuesto a recibir informacion acerca del cuidado responsable de su mascota?</legend>
-					      <div class="col-sm-12">
+                                        </fieldset>
+                                    <fieldset>
+                                            <legend>11. ¿Comprende que la mascota tiene un periodo de adaptación y debe ser paciente mientras esto ocurre? <abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res11" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res11" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					 
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">11. ¿Reconoce que la mascota tiene un proceso de adaptacion, por lo que usted debe ser paciente mientras esto ocurre?</legend>
-					      <div class="col-sm-12">
+                                    </fieldset> 
+                                    <fieldset>
+                                            <legend>12. ¿Se compromete a garantizar el bienestar general de la mascota? <abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res12" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
-					        <div class="form-check"style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					        <div class="form-check" style="margin-left:20px;">
+					          <input type="radio" required name="res12" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					  <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">12. ¿Se compromete a garantizar el bienestar general de la mascota?</legend>
-					      <div class="col-sm-12">
-					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
-					        </div>
-					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
-					          </label>
-					        </div>
-					      </div>
-					    </div>
-					  </fieldset> 
-					 <a href="Pagina1.jsp" class="btn btn-danger btn-sm" type="button">Volver</a>
-					 <a href="Pagina3.jsp" class="btn btn-primary active btn-sm" type="button">Siguiente</a>
-				</div>
+                                            </div>
+                                    </fieldset>
+                                    </fieldset>
+                                </div>
 			</div>
-		</div>
+                    <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
+                        <input type='hidden' name='res1' value='<%=dat1%>'>
+                        <input type='hidden' name='res2' value='<%=dat2%>'>
+                        <input type='hidden' name='res3' value='<%=dat3%>'>
+                        <input type='hidden' name='res4' value='<%=dat4%>'>
+                        <input type='hidden' name='res5' value='<%=dat5%>'>
+                        <input type='hidden' name='res6' value='<%=dat6%>'>
+                    </form>
+                    <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
+                </div>
 	</div>
 </div>
 </body>

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Consultar_Admin
-    Created on : 23/11/2018, 07:52:28 AM
-    Author     : KnokinGm
---%>
-
 <%@page import="Modelo.Administrador.Admin.Admin"%>
 <%@page import="Modelo.Administrador.Admin.GSAdminAdmin"%>
 <%@page import="java.util.ArrayList"%>

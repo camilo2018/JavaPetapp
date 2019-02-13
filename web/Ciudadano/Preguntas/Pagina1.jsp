@@ -1,158 +1,117 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Preguntas</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    
-  </head>
-  <body>
-
+</head>
+<body>
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			 <h1>Encuesta</h1>
+			<h1>Encuesta</h1>
+                        <form action="Pagina2.jsp" method="Post">
 			<div class="row">
 				<div class="col-md-6">
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">1. ¿Tienen todos los miembros de la familia conocimiento de la adopcion?</legend>
-					      <div class="col-sm-12">
+                                    <fieldset class="form-group">
+                                       <div class="row">
+                                        <fieldset>
+                                            <legend>1. ¿Tienen todos los miembros de la familia conocimiento de la adopción?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res1" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res1" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">2. ¿Ha tenido mascotas anteriormente?</legend>
-					      <div class="col-sm-12">
+                                        </fieldset>
+                                    <fieldset>
+                                            <legend>2. ¿Ha tenido mascotas anteriormente?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res2" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res2" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">3. ¿En la actualidad tiene mascotas?</legend>
-					      <div class="col-sm-12">
+                                    </fieldset> 
+                                    <fieldset>
+                                            <legend>3. ¿En la actualidad tiene mascotas?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res3" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res3" id="r2" value="0"><label for="r2">Naur</label>
+					          </label>
+					        </div>
+                                            </div>
+					    </div>
+                                    </fieldset>
+                                    </fieldset>
+                                </div>
+                           <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                       <div class="row">
+                                        <fieldset>
+                                            <legend>4. ¿Vive en casa propia?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
+					        <div class="form-check" style="margin-left:20px;">
+					          <input type="radio" required name="res4" id="r1" value="1" ><label for="r1">Si </label>
+					        </div>
+					        <div class="form-check" style="margin-left:20px;">
+					          <input type="radio" required name="res4" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					  
-				</div>
-				<div class="col-md-6">
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">4. ¿Vive en casa propia?</legend>
-					      <div class="col-sm-12">
+                                        </fieldset>
+                                    <fieldset>
+                                            <legend>5. ¿Su vivienda cuenta con el espacio suficiente para la mascota que desea adoptar?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res5" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					          <input type="radio" required name="res5" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					 
-					 <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">5. ¿Su vivienda cuenta con el espacio sufciente para la mascota que desea adoptar?</legend>
-					      <div class="col-sm-12">
+                                    </fieldset> 
+                                    <fieldset>
+                                            <legend>6¿Cuenta con tiempo suficiente a diario para compartir con la mascota?<abbr title="This field is mandatory"></abbr></legend>
+                                            <div class="col-sm-12">
 					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
+					          <input type="radio" required name="res6" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
-					        <div class="form-check"style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
+					        <div class="form-check" style="margin-left:20px;">
+					          <input type="radio" required name="res6" id="r2" value="0"><label for="r2">Naur</label>
 					          </label>
 					        </div>
 					      </div>
-					    </div>
-					  </fieldset> 
-					  <fieldset class="form-group">
-					    <div class="row">
-					      <legend class="col-form-label col-sm-12 pt-0">6. ¿Cuenta con tiempo suficiente a diario para compartir con la mascota?</legend>
-					      <div class="col-sm-12">
-					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios1" value="option1">
-					          <label class="form-check-label" for="gridRadios1">
-					            Si
-					          </label>
-					        </div>
-					        <div class="form-check" style="margin-left:20px;">
-					          <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios2" value="option2">
-					          <label class="form-check-label" for="gridRadios2">
-					            No
-					          </label>
-					        </div>
-					      </div>
-					    </div>
-					  </fieldset> 
-					
-					 <a href="../Menu/MenuCiudadano.jsp" class="btn btn-danger btn-sm" type="button">Volver</a>
-					 <a href="Pagina2.jsp" class="btn btn-primary active btn-sm" type="button">Siguiente</a>
-				</div>
+                                            </div>
+                                    </fieldset>
+                                    </fieldset>
+                                </div>
 			</div>
-		</div>
+                    <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
+                        </form>
+                    <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
+                </div>
 	</div>
 </div>
-
-    
+                
   </body>
 </html>
