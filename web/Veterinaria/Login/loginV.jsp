@@ -11,19 +11,23 @@
 <!DOCTYPE html>
 <html>
     <head>
- 	<meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,  user-scalabe=no, initial-scale=1.0, minimum-scale=1.0">
-	<title>Pet App</title>
-	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="stylesheet" href="Imagenes/fonts/style.css" >
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="Estilo.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/Footer-white.css">
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="main.js"></script>
   	<script src="js/jquery-3.3.1.min.js" ></script>
-  	<script src="js/main.js" ></script>
+  	<script src="js/main.js"></script>
 
+
+	<title>Pet App</title>
 </head>
 <body>
   <%
@@ -46,17 +50,18 @@
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark fixed-top">
                
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="navbar-toggler-icon"></span>
-                    </button> <a class="navbar-brand" href="">PetApp</a>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="navbar-toggler-icon"></span>
+                        </button> <a class="navbar-brand" href="../../Login/Vista/login.php">PetApp</a>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="navbar-nav ml-md-auto">
-                            <a class="navbar-brand" href="">Usuario: <%=dat1%></a>
-                                <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                                    <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class="fotomod" 
+                        <a class="navbar-brand" href="">Usuario: <?php echo "".$usuar.""?></a>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                            
+                        <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class="fotomod" 
                                       style="width:50px;height:50px;border-radius:200px 200px;"></a>     
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <form action="../Animal/Consultar_Animal.jsp" method="Post">
                             <input type='hidden' name='usu4' value='<%=cgsc.getNom()%>'>
                             <input type="submit" class="dropdown-item" name="per" value="Perfil"></a>
@@ -103,21 +108,19 @@
                 </div>
             </div>
         </div>
-<header >	
+<header>	
 		<div class="logotipo">
-		<h1>Pet App</h1>
+		<h1>Pet App </h1>
 		</div>
-		<div class="navegacion"  id="lista">
+		<div class="navegacion">
 			<div class="boton-menu">
 	<a href="#" ><span class="icon-menu3"></span> </a>
 		</div>
 		<nav >
-                    <ul class="menu" >
-		<li><a href="#">Veterinaria:)</a></li>
-		<li><a href="../Animal/Consultar_Animal.jsp">Peludos para Adoptar</a></li>
-		<li><a href="../Evento/Consultar_Evento.jsp">Eventos</a></li>
-		<li><a href="../Denuncias/Ingresar_Denuncia.jsp">Denunciar</a></li>
-		
+			<ul class="menu">
+		<li><a href="#">Incio</a></li>
+		<li><a href="Galeria.php">Galeria</a></li>
+		<li><a href="#">Contacto</a></li>
 </ul>
 	</nav>
 </div>
@@ -136,99 +139,86 @@
 	<br>
 	<br>
 
-  <div class="row slideanim" id="modulos">
+  <div class="row" id="modulos">
 
-  <div class="col-sm-4 col-xs-12" id="caja1" >
-    <div class="panel panel-default text-center">
+      <!--  MODULO UNO -->
+      
+  <div class="col-sm">
+    <div class="panel panel-default text-center"  id="Caja01" >
         <div class="panel-heading" id="panel">
         	<img src="Imagenes/info.png" height="30" width="30" id="info" > 
-          <h1>Adopción</h1>
-            <h5>Cómo es el Proceso?</h5>
+          <h1 id="Adopcion">Adopción</h1>
+            <h5>Cómo Adopto?</h5>
             </div>
             <div id="caja2">
             	<br>
-            	<p>En este módulo usted podrá dar hogar a un animal que lo necesita, La alcaldía municipal de 
-                    Mosquera Cundinamarca, le ofrece la posibilidad de escoger el animal que usted quiera adoptar, 
-                    y así contribuir de manera responsable a la salud ambiental y el desarrollo del municipio 
-                </p><br><br>
-                
-            	<a href="Informacion/Adoptar.jsp">saber más</a>
+            	<p>En este módulo usted podrá dar hogar a un animal que lo necesita, La alcaldía municipal de Mosquera Cundinamarca, le ofrece la posibilidad de escoger el animal que usted quiera adoptar, y así contribuir de manera responsable a la salud ambiental y el desarrollo del municipio </p><br><br>
+            	<a href="Informacion/Adoptar.php">saber más</a>
 
             </div>
-          <div class="panel-body" id="imagen">
+          <div class="panel-body" id="cajaimagen">
           <!--  AQUI VA LA IMAGEN DEL EVENTO -->
-        <img src="Imagenes/adopcion.jpeg" class="img-responsive slideanim" >
+        <img src="Imagenes/adopcion.jpeg" class="img-responsive slideanim" id="imagenadopcion">
      </div>
     </div>      
   </div>  
       
+      <!--  MODULO DOS -->
       
-    <div class="col-sm-4 col-xs-12" id="caja3">
+    <div class="col-sm" id="caja3">
       <div class="panel panel-default text-center">
           <div class="panel-heading" id="panel">
           	<img src="Imagenes/info.png" height="30" width="30" id="info2" >
-          <h1>Veterinarias</h1>
-           <h5>Otras Veterinarias Vinculadas</h5>
+          <h1 id="Veterinaria">Veterinarias</h1>
+           <h5>Veterinarias Vinculadas</h5>
         </div>
         <div id="caja4">
         	<br>
-            	<p>En este módulo usted podrá ubicar las diferentes veterinarias del municipio que contribuyen
-                    al cuidado animal y a las cuales usted podrá acudir en caso de que su mascota requiera
-                    atención
-                </p><br><br>
-                
-            	<a href="Informacion/Veterinaria.jsp">saber más</a>
+            	<p>En este módulo usted podrá ubicar las diferentes veterinarias del municipio que contribuyen al cuidado animal y a las cuales usted podrá acudir en caso de que su mascota requiera atención</p><br><br>
+            	<a href="Informacion/Eventos.php">saber más</a>
         </div>
-        <div class="panel-body" id="imagen2">
-          <img src="Imagenes/veterinaria.jpeg" class="img-responsive slideanim">
+        <div class="panel-body" id="cajaimagen2">
+          <img src="Imagenes/veterinaria.jpeg" class="img-responsive slideanim" id="imagenveterinaria">
         </div>
       </div>      
     </div>     
 
+      <!--  MODULO TRES -->
       
-    <div class="col-sm-4 col-xs-12" id="caja5">
+    <div class="col-sm" id="caja5">
       <div class="panel panel-default text-center">
           <div class="panel-heading" id="panel">
           	<img src="Imagenes/info.png" height="30" width="30" id="info3" >
-          <h1>Eventos</h1>
-           <h5>De que tratan los eventos</h5>
-           
-           
+          <h1 id="Eventos">Eventos</h1>
+           <h5>Infórmate</h5>
         </div>
         <div id="caja6">
            <br>
-            	<p>En este módulo usted podrá informarse acerca de las jornadas de cuidado animal que realiza el 
-                    municipio, aquí podrá observar una descripción detallada además de la fecha, la hora y el lugar 
-                    en el que se realizara  
-                </p><br><br>
-                
-            	<a href="Informacion/Eventos.jsp">saber más</a>
-            
+            	<p>En este módulo usted podrá informarse acerca de las jornadas de cuidado animal que realiza el municipio, aquí podrá observar una descripción detallada además de la fecha, la hora y el lugar en el que se realizara</p><br><br>
+            	<a href="Informacion/Veterinaria.php">saber más</a>
         </div>
-        <div class="panel-body" id="imagen3">
-          <img src="Imagenes/jornadas.jpeg" class="img-responsive slideanim">
+        <div class="panel-body" id="cajaimagen3">
+          <img src="Imagenes/jornadas.jpeg" class="img-responsive slideanim" id="imageneventos">
         </div>
       </div>      
     </div>    
   </div>
 
+    <!--  FOOTER -->
 
     <footer id="myFooter">
         <div class="container">
             <ul>
                 <li><a href="#">Alcaldia de Mosquera</a></li>
                 <li><a href="#">Contactenos</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Terminos de servicio</a></li>
             </ul>
-            
-        <p class="footer-copyright">© 2018 Copyright</p>
+        <p class="footer-copyright">© 2019 Copyright</p>
         </div>
         <div class="footer-social">
             <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
             <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
             <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
-            
         </div>
 </footer>
 
