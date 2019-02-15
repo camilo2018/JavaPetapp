@@ -44,6 +44,7 @@
            ced=request.getParameter("cedula");
         %>
  	<label>Respuesta </label><input type="text" name="denres" required="" class="form-control">
+        <label>Encargado </label><input type="text" name="encargado" required="" class="form-control">
 <input type="hidden" name="cedul" value="<%=ced%>" class="form-control">
 
       <div class="form-group" id="bot">

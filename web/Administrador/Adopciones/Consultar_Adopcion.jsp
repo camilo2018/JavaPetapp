@@ -57,8 +57,13 @@
                         <th><%=cgsc.getCed()%></th>
                         </tr>
                         <tr>
+                        <tr>
                         <th>Respuesta</th>
                         <th><%=cgsc.getMen()%></th>
+                        </tr>
+                        <tr>
+                        <th>Encargado</th>
+                        <th><%=cgsc.getDoc()%></th>
                         </tr>
                         <tr>
                         

@@ -119,8 +119,6 @@
   	</form>
             <h3 class="display-4" style="margin-top: 50px;">Respuesta</h3>
     	        <%
-                String ced=request.getParameter("cedul");
-                JOptionPane.showMessageDialog(null, cgsc2.getCed());
                 ArrayList<GSRespuesta> res = new ArrayList<>();
                 Respuesta res1 = new Respuesta();
                 res=res1.Consultar1(cgsc2.getCed());
@@ -133,7 +131,7 @@
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=res2.getCed()%></th>
+                    <th><img src="../../Uploads/Respuestas/<%=res2.getFot()%>" width="50" height="50"></th>
                     </thead>
                     </tr>
                     </table>
@@ -152,6 +150,10 @@
                         <tr>
                         <th>Mensaje</th>            
                         <th><%=res2.getMen()%></th>
+                        </tr>
+                        <tr>
+                            <th>Encargado del Proceso</th>
+                            <th><%=res2.getEnc()%></th>
                         </tr>
                         <tr>
                         

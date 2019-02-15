@@ -7,22 +7,25 @@ public class GSAdopcion {
     private int codap;
     private int ani;
     private String ced;
+    private String doc;
     private String men;
 
-    public GSAdopcion(int codap, int ani, String ced, String men) {
+    public GSAdopcion(int codap, int ani, String ced, String doc, String men) {
         this.codap = codap;
         this.ani = ani;
         this.ced = ced;
-        this.men = men;
-    }
-
-    public GSAdopcion(int ani, String ced, String men) {
-        this.ani = ani;
-        this.ced = ced;
+        this.doc = doc;
         this.men = men;
     }
 
     public GSAdopcion() {
+    }
+
+    public GSAdopcion(int ani, String ced, String doc, String men) {
+        this.ani = ani;
+        this.ced = ced;
+        this.doc = doc;
+        this.men = men;
     }
 
     public int getCodap() {
@@ -49,6 +52,14 @@ public class GSAdopcion {
         this.ced = ced;
     }
 
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
+    }
+
     public String getMen() {
         return men;
     }
@@ -57,5 +68,7 @@ public class GSAdopcion {
         this.men = men;
     }
     
+
+  
     
 }

@@ -10,22 +10,36 @@ package Modelo.Administrador.ResPositiva;
  * @author KnokinGm
  */
 public class GSRespositiva {
+    private String fot;
     private int cod;
     private String ced;
     private String men;
+    private String doc;
 
-    public GSRespositiva(int cod, String ced, String men) {
+    public GSRespositiva(String fot, int cod, String ced, String men, String doc) {
+        this.fot = fot;
         this.cod = cod;
         this.ced = ced;
         this.men = men;
-    }
-
-    public GSRespositiva(String ced, String men) {
-        this.ced = ced;
-        this.men = men;
+        this.doc = doc;
     }
 
     public GSRespositiva() {
+    }
+
+    public GSRespositiva(String fot, String ced, String men, String doc) {
+        this.fot = fot;
+        this.ced = ced;
+        this.men = men;
+        this.doc = doc;
+    }
+
+    public String getFot() {
+        return fot;
+    }
+
+    public void setFot(String fot) {
+        this.fot = fot;
     }
 
     public int getCod() {
@@ -51,6 +65,16 @@ public class GSRespositiva {
     public void setMen(String men) {
         this.men = men;
     }
-    
-    
+
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
+    }
+
+   
+
+  
 }

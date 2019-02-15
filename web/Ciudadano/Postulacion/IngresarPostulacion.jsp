@@ -4,6 +4,11 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Usuario.Usuario"%>
+<%@page import="Modelo.Usuario.GSUsuario"%>
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,6 +31,28 @@
     <form action="../Animal/Consultar_Animal.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
+             <%
+        HttpSession ht = request.getSession();
+        String dat2=(String)ht.getAttribute("nom1");
+        %>
+        <%
+                ArrayList<GSUsuario> datc1 = new ArrayList<>();
+                Usuario co1 = new Usuario();
+                datc1=co1.Consultar1(dat2);
+                GSUsuario cgsc= new GSUsuario();
+                for (int i = 0; i < datc1.size() ; i++) {
+                        cgsc=datc1.get(i);
+                %>
+                 <%}%>
+                  <%
+                ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
+                Ciudadano co = new Ciudadano();
+                dat=co.Consultar1(dat2);
+                GSCiudadanoAdmin cgsc1= new GSCiudadanoAdmin();
+                
+                for (int i = 0; i < dat.size() ; i++) {
+                        cgsc1=dat.get(i);
+                %>
 <div id="padre">
 	<div id="insertar" class="form-group">
 	<h1>Realizar Postulacion</h1>
@@ -77,9 +104,9 @@
         <input type="file" name="recibo" required="" id="inp">
         </br>
         
-        <label>Cedula</label>
-        <input type="text" name="cedula" required="" class="form-control">
-        
+      
+        <input type="hidden" name="cedula" value='<%=cgsc1.getCed()%>' required="" class="form-control">
+      
            <%
            int c;
            
@@ -98,7 +125,7 @@
 
 </div>
 </div>
-
+   <%}%>
 </body>
 
 </html>
