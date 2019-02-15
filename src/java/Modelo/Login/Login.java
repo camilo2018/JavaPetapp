@@ -28,7 +28,6 @@ public class Login {
         try {
             ps=cnn.prepareStatement("select * from login_usuarios where nombre_usuario='"+a.getUsu()+"' and clave='"+a.getCla()+"' ");
             res=ps.executeQuery();
-            JOptionPane.showMessageDialog(null, res.next());            
             while(res.next()){
                 GSLogin as = new GSLogin(res.getString(1),res.getString(2),res.getInt(3));
                 arreglo.add(as);
@@ -36,7 +35,6 @@ public class Login {
             }
         } catch (Exception e) {
         }
-        JOptionPane.showMessageDialog(null, arreglo);
         return arreglo;
     }
     public String ro(){
