@@ -1,3 +1,5 @@
+<%@page import="Modelo.Preguntas.Respuestas"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
 <%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
 <%@page import="Modelo.Administrador.Animal.Animal"%>
@@ -123,9 +125,18 @@
                 
                 <div class="caja2">
                     <table class="table">
-                        <form method='POST' action='../Postulacion/IngresarPostulacion.jsp'>
-                        <input type='hidden' name='code' value='<%=cgsc2.getCod()%>'>
-                  <input type='image' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
+                        <form method='POST' action='../../ServletRespuesta'>
+                        <%    
+                        ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
+                        Respuestas cores = new Respuestas();
+                        dares=cores.Consultar1(dat2);
+                        GSCiudadanoAdmin cgscres= new GSCiudadanoAdmin();
+                
+                        for (int ire = 0; ire < dares.size() ; ire++) {
+                        cgscres=dares.get(ire);%>
+                        <input type='text' name='code' value='<%=cgsc2.getCod()%>'>
+                        <input type='text' name='cedu' value=' <%=cgscres.getCed()%>'>
+                  <input type='submit' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
                   <h1>Adoptame</h1>
                 
                 </form>
@@ -171,7 +182,7 @@
                 </table>
             </div>
             </div>
-            <%}}%>
+            <%}}}%>
     </body>
 </html>
 
