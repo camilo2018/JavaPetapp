@@ -15,6 +15,13 @@
     <script src="js/scripts.js"></script>
 </head>
 <body>
+        <%
+            HttpSession ht = request.getSession();
+            String ced=(String)ht.getAttribute("ced1");
+            Integer ani=(Integer)ht.getAttribute("ani1");
+        %>
+        <p>ced</p><%=ced%>
+        <p>ani</p><%=ani%>
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -107,6 +114,9 @@
                                 </div>
 			</div>
                     <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
+                    <input type='hidden' name='cedu' value='<%=ced%>'>
+                    <input type='hidden' name='code' value='<%=ani%>'>
+                        
                         </form>
                     <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
                 </div>

@@ -5,8 +5,13 @@
  */
 package Controlador;
 
+import Modelo.Administrador.Ciudadano.Ciudadano;
+import Modelo.Administrador.Ciudadano.GSCiudadanoAdmin;
 import Modelo.Preguntas.GSRespuestaFin;
+import Modelo.Preguntas.Respu;
 import Modelo.Preguntas.Respuestas;
+import Modelo.Usuario.GSUsuario;
+import Modelo.Usuario.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -41,64 +46,59 @@ public class ServletRespuesta extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         if (request.getParameter("readop")!=null) {
-            this.Enviar(request, response);
-        }
-       
-       
-    }
+            
+        String dat2=request.getParameter("dat1");
+        
+        String ced=request.getParameter("cedu");
+        int ani=Integer.parseInt(request.getParameter("code"));
+        
+        ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
+            Ciudadano cores = new Ciudadano();
+            dares=cores.Consultar1(dat2);
+            GSCiudadanoAdmin cgscres= new GSCiudadanoAdmin();
 
-  protected void Enviar(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       PrintWriter out = response.getWriter();
-       
-        String ced;
-        ced=request.getParameter("cedu");
-        GSRespuestaFin in = new GSRespuestaFin(ced);
-        JOptionPane.showMessageDialog(null, in);
-        Respuestas log = new Respuestas();
-        ArrayList<GSRespuestaFin> arreglo = new ArrayList<>();
+            for (int ire = 0; ire < dares.size() ; ire++) {
+            cgscres=dares.get(ire);
         
-        arreglo = log.envio(in);
-        
-        
-        if(arreglo.size()>0){
+        ArrayList<GSRespuestaFin> datfin = new ArrayList<>();
+        Respu cofin = new Respu();
+        datfin=cofin.Consultar(cgscres.getCed());
+        GSRespuestaFin cgscfin= new GSRespuestaFin();
             
-            for (int i = 0; i < arreglo.size() ; i++) {
-                in=arreglo.get(i);
-                c=in.getCed();
-                r=in.getRe1();
-                
-            
-            }
-            
-        if((c.equals(ced))){
+        if(datfin.size()>0){
+            int res=Integer.parseInt(request.getParameter("res1"));
+            for (int ifin = 0; ifin < datfin.size() ; ifin++) {
+            cgscfin=datfin.get(ifin);
             JOptionPane.showMessageDialog(null, "Formulario");
             HttpSession htt=request.getSession();
-            int cod=Integer.parseInt(request.getParameter("code"));
-            int res=r;
-            String ce=c;
-            Integer dato= new Integer(res);
-            htt.setAttribute("res1", dato);
-            String dato2= new String(ce);
+            Integer dato1= new Integer(res);
+            htt.setAttribute("res1", dato1);
+            String dato2= new String(ced);
             htt.setAttribute("ced1", dato2);
-            Integer dato3= new Integer(cod);
+            Integer dato3= new Integer(ani);
             htt.setAttribute("ani1", dato3);
-            response.sendRedirect("Ciudadano/Postulacion/IngresarPostulacion.jsp");    
+            response.sendRedirect("Ciudadano/Postulacion/IngresarPostulacion.jsp");   
             
+        }
         }
         else{
             JOptionPane.showMessageDialog(null, "Preguntas");
             HttpSession htt=request.getSession();
-            int cod=Integer.parseInt(request.getParameter("code"));
             String dato2= new String(ced);
             htt.setAttribute("ced1", dato2);
-            Integer dato3= new Integer(cod);
+            Integer dato3= new Integer(ani);
             htt.setAttribute("ani1", dato3);
             response.sendRedirect("Ciudadano/Preguntas/Pagina1.jsp");
         }
         }
-  }
+        }
+        
+       
+       
+    }
+
+        
+  
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

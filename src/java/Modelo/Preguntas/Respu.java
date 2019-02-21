@@ -5,27 +5,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
-public class Respuestas {
+public class Respu {
 
     conexion con=new conexion();
     Connection cnn=con.conexionpa();
     PreparedStatement ps=null;
     ResultSet res=null;
-    private static String c;
     
     
-    public ArrayList<GSRespuestaFin> Consultar1(String pr){
+    public ArrayList<GSRespuestaFin> Consultar(String a){
         ArrayList<GSRespuestaFin> R = new ArrayList<>();
         try {
-            ps=cnn.prepareStatement("Select * from respuesta_pre");
+            ps=cnn.prepareStatement("Select respuesta_fin from respuesta_pre where cedula='"+a+"'");
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSRespuestaFin CF = new GSRespuestaFin(res.getString(1),res.getInt(2));
+                GSRespuestaFin CF = new GSRespuestaFin(res.getInt(1));
                 R.add(CF);
-                
                 
             }
             } catch (Exception e) {
@@ -33,5 +30,4 @@ public class Respuestas {
             return R;
         }
     
-        
 }

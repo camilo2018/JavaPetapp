@@ -1,9 +1,3 @@
-<%-- 
-    Document   : IngresarPostulacion
-    Created on : 13/02/2019, 10:54:05 AM
-    Author     : KnokinGm
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,12 +11,17 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="CSS/Estilo.css">
+    <link rel="stylesheet" href="../Postulacion/CSS/Estilo.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <body id="fondox">
-
-
+        
+        <%
+            HttpSession ht = request.getSession();
+            String ced=(String)ht.getAttribute("ced1");
+            Integer ani=(Integer)ht.getAttribute("ani1");
+            Integer res=(Integer)ht.getAttribute("res1");
+        %>
     <form action="../Animal/Consultar_Animal.jsp" >
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
@@ -69,26 +68,17 @@
         <option value="Finca">Finca</option>
         </select>
         
-        <label>puntaje</label>
-        <input type="text" name="rpuntaje" id="rp" required="" class="form-control">
-        </br>
         
         <label>Recibo Publico</label>
         <input type="file" name="recibo" required="" id="inp">
         </br>
         
-        <label>Cedula</label>
-        <input type="text" name="cedula" required="" class="form-control">
         
-           <%
-           int c;
            
-           c=Integer.parseInt(request.getParameter("code"));
-          
-       
-        %>
 
-   <input type="hidden" name="coda" value="<%=c%>" class="form-control">
+   <input type="text" name="coda" value="<%=ani%>" class="form-control">
+   <input type="text" name="punt" value="<%=res%>" class="form-control">
+   <input type="text" name="cedu" value="<%=ced%>" class="form-control">
       <div class="form-group" id="bot">
       <input type="submit" name="ingpostu" value="Realizar Postulacion1" class="btn btn-primary">
       </div>

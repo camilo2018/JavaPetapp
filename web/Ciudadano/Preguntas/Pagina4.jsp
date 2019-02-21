@@ -20,7 +20,8 @@
   </head>
   <body>
         <%
-            HttpSession ht = request.getSession();
+            String ced=request.getParameter("cedu");
+            String ani=request.getParameter("code");
             String dat1=request.getParameter("res1");
             String dat2=request.getParameter("res2");
             String dat3=request.getParameter("res3");
@@ -40,6 +41,8 @@
             String dat17=request.getParameter("res17");
             String dat18=request.getParameter("res18");
         %>
+        <p>ced</p><%=ced%>
+        <p>ani</p><%=ani%>
         <p>res1</p><%=dat1%>
         <p>res2</p><%=dat2%>
         <p>res3</p><%=dat3%>
@@ -62,7 +65,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h1>Encuesta</h1>
-                        <form action="Pagina4.jsp" method="Post">
+                        <form action="../../ServletInsertarPreguntas" method="Post">
 			<div class="row">
 				<div class="col-md-6">
                                     <fieldset class="form-group">
@@ -94,7 +97,9 @@
                                    </fieldset>
                                 </div>
 			</div>
-                    <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
+                    <input type='submit' name='fin' value='Finalizar' class='btn btn-primary active btn-sm'>
+                    <input type='hidden' name='cedu' value='<%=ced%>'>
+                    <input type='hidden' name='code' value='<%=ani%>'>
                     <input type='hidden' name='res1' value='<%=dat1%>'>
                     <input type='hidden' name='res2' value='<%=dat2%>'>
                     <input type='hidden' name='res3' value='<%=dat3%>'>

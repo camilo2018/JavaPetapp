@@ -1,3 +1,7 @@
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.Preguntas.Respu"%>
+<%@page import="Modelo.Preguntas.GSRespuestaFin"%>
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
 <%@page import="Modelo.Preguntas.Respuestas"%>
 <%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
 <%@page import="Modelo.Usuario.Usuario"%>
@@ -5,6 +9,8 @@
 <%@page import="Modelo.Administrador.Animal.Animal"%>
 <%@page import="Modelo.Administrador.Animal.GSAnimalAdmin"%>
 <%@page import="java.util.ArrayList"%>
+
+                        
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,6 +31,7 @@
     <body>
        
     <%
+        
         HttpSession ht = request.getSession();
         String dat2=(String)ht.getAttribute("nom1");
         %>
@@ -125,21 +132,16 @@
                 
                 <div class="caja2">
                     <table class="table">
-                        <form method='POST' action='../../ServletRespuesta'>
                         <%    
                         ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
-                        Respuestas cores = new Respuestas();
+                        Ciudadano cores = new Ciudadano();
                         dares=cores.Consultar1(dat2);
                         GSCiudadanoAdmin cgscres= new GSCiudadanoAdmin();
                 
                         for (int ire = 0; ire < dares.size() ; ire++) {
                         cgscres=dares.get(ire);%>
-                        <input type='text' name='code' value='<%=cgsc2.getCod()%>'>
-                        <input type='text' name='cedu' value=' <%=cgscres.getCed()%>'>
-                  <input type='submit' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
-                  <h1>Adoptame</h1>
+                        
                 
-                </form>
                         <tr>
                         <th><img src="../../Uploads/FotosAnimal/<%=cgsc2.getTam()%>" width="100" height="100"></th>
                         </tr>
@@ -176,6 +178,24 @@
                         </tr> 
                         
                         
+                        <form method='POST' action='../../ServletRespuesta'>
+                        <input type='submit' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
+                        <h1>Adoptame</h1>
+                        <input type='hidden' name='code' value='<%=cgsc2.getCod()%>'>
+                        <input type='hidden' name='cedu' value=' <%=cgscres.getCed()%>'>
+                        <input type='text' name='dat1' value='<%=dat2%>'>
+                        <%
+                        ArrayList<GSRespuestaFin> datfin1 = new ArrayList<>();
+                        Respu cofin1 = new Respu();
+                        datfin1=cofin1.Consultar(cgscres.getCed());
+                        GSRespuestaFin cgscfin1= new GSRespuestaFin();
+                        for (int ifin1 = 0; ifin1 < datfin1.size() ; ifin1++) {
+                                cgscfin1=datfin1.get(ifin1);
+                        %>
+                        <input type='text' name='res1' value='<%=cgscfin1.getRe1()%>'>
+                        
+                        <%}%>
+                        </form>
               
                 
                 

@@ -20,7 +20,8 @@
   </head>
   <body>
         <%
-            HttpSession ht = request.getSession();
+            String ced=request.getParameter("cedu");
+            String ani=request.getParameter("code");
             String dat1=request.getParameter("res1");
             String dat2=request.getParameter("res2");
             String dat3=request.getParameter("res3");
@@ -34,6 +35,8 @@
             String dat11=request.getParameter("res11");
             String dat12=request.getParameter("res12");
         %>
+        <p>ced</p><%=ced%>
+        <p>ani</p><%=ani%>
         <p>res1</p><%=dat1%>
         <p>res2</p><%=dat2%>
         <p>res3</p><%=dat3%>
@@ -138,6 +141,8 @@
                                 </div>
 			</div>
                     <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
+                    <input type='hidden' name='cedu' value='<%=ced%>'>
+                    <input type='hidden' name='code' value='<%=ani%>'>
                     <input type='hidden' name='res1' value='<%=dat1%>'>
                     <input type='hidden' name='res2' value='<%=dat2%>'>
                     <input type='hidden' name='res3' value='<%=dat3%>'>

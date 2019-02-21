@@ -99,6 +99,7 @@ private int r;
         ArrayList<GSLogin> arreglo = new ArrayList<>();
         
         arreglo = log.login(in);
+        JOptionPane.showMessageDialog(null, arreglo.size());
         
         if(arreglo.size()>0){
             
@@ -134,12 +135,13 @@ private int r;
             else{
             }
         }
+        }
         else{
             out.print("Usted no es un Usuario Registrado");
             response.sendRedirect("Login/inicio.jsp");
         }
         }
-        }
+        
         
     }
 

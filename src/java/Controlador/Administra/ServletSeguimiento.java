@@ -54,7 +54,7 @@ public class ServletSeguimiento extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-      String tel,dir,fij,ced,ubi,tvi,cer,cpf,rpub;
+        String tel,dir,fij,ced,ubi,tvi,cer,cpf,rpub;
         int codp,coda,est,resi,rpun;
         codp=Integer.parseInt(request.getParameter("codigo"));
         tel=request.getParameter("telefono");
