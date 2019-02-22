@@ -6,6 +6,22 @@ public class GSFuncionario {
     private String tel;
     private String nom;
     private String cor;
+    private String car;
+    private String dep;
+
+    public GSFuncionario(String ced, String tel, String nom, String cor, String car, String dep) {
+        this.ced = ced;
+        this.tel = tel;
+        this.nom = nom;
+        this.cor = cor;
+        this.car = car;
+        this.dep = dep;
+    }
+
+    public GSFuncionario(String ced) {
+        this.ced = ced;
+    }
+    
 
     public GSFuncionario(String ced, String tel, String nom, String cor) {
         this.ced = ced;
@@ -49,5 +65,22 @@ public class GSFuncionario {
         this.cor = cor;
     }
 
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+
+    public String getDep() {
+        return dep;
+    }
+
+    public void setDep(String dep) {
+        this.dep = dep;
+    }
+
+    
     
 }

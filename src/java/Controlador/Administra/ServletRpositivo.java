@@ -64,7 +64,7 @@ public class ServletRpositivo extends HttpServlet {
         GSAnimalAdmin con2=new GSAnimalAdmin(coda);
         Rpositiva in2=new Rpositiva();
         in2.EliminarAnim(con2);
-        GSAdopcion con3=new GSAdopcion(coda,ce,doc,men);
+        GSAdopcion con3=new GSAdopcion(fot,coda,ce,doc,men);
         Adopcion in3=new Adopcion();
         in3.Ingresar_adop(con3);
         response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");

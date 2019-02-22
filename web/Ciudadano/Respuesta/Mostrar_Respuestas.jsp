@@ -1,3 +1,5 @@
+<%@page import="Modelo.Administrador.Funcionario.Funcionario"%>
+<%@page import="Modelo.Administrador.Funcionario.GSFuncionario"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
 <%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
@@ -126,6 +128,8 @@
                 for (int i3 = 0; i3 < res.size() ; i3++) {
                         res2=res.get(i3);
                 %>
+                           
+     
             <div id="centro">
                 <div class="caja1">
                     <table class="table">
@@ -136,7 +140,7 @@
                     </tr>
                     </table>
                 </div>
-                
+     
                 <div class="caja2">
                     <table class="table">
                         <tr>
@@ -148,31 +152,80 @@
                         <th><%=res2.getCed()%></th>
                         </tr>
                         <tr>
+                        <tr>
+                        <th>Encargado</th>
+                        <th><%=res2.getEnc()%></th>
+                        </tr>
+                        <tr>
                         <th>Mensaje</th>            
                         <th><%=res2.getMen()%></th>
                         </tr>
                         <tr>
-                            <th>Encargado del Proceso</th>
-                            <th><%=res2.getEnc()%></th>
-                        </tr>
-                        <tr>
-                        
-                    
-                <form method='POST' action=''>
+                        <form method='POST' action=''>
                     <input type='hidden' name='cod' value=''>
                     <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
                 </form>
-            
-                <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
-                </form>
+                <form action="">
+                    <th><input type="submit" name="eliminar" value="Eliminar" class="btn btn-danger"></th>
+                </form>  
+                    </table>
+                </div>
                 
-                
-                </table>
+                        <div class="caja3">
+                         <table class="table">
+                         <tr>
+                         <thead class='thead-light'>
+                    <th colspan='2'> Encargado en  el Proceso</th>
+                         </thead>
+                    </tr>
+                    </table>
+                            
+                     </div>
+                <%
+                    
+                ArrayList<GSFuncionario> datc2 = new ArrayList<>();
+                Funcionario co2 = new Funcionario();
+                datc2=co2.Consultar_f(res2.getEnc());
+                GSFuncionario res3= new GSFuncionario();
+                for (int l = 0; l < datc2.size() ; l++) {
+                        res3=datc2.get(l);
+                %>   
+                         
+                      <div class="caja4">
+                            <table class="table">
+                                   <tr>
+                                   <th>Nombre</th>
+                            <th><%=res3.getNom()%></th>
+                                </tr>
+                                <tr>
+                              <th>Documento</th>
+                              <th><%=res3.getCed()%></th>
+                        </tr>
+                        <tr>
+                            <th>Telefono</th>
+                            <th><%=res3.getTel()%></th>
+                        </tr>
+                        <tr>
+                            <th>Correo</th>
+                            <th><%=res3.getCor()%></th>
+                        </tr>
+                        <tr>
+                            <th>Cargo</th>
+                            <th><%=res3.getCar()%></th>
+                        </tr>
+                        <tr>
+                            <th>Dependencia</th>
+                            <th><%=res3.getDep()%></th>
+                        </tr>
+                                 <%}%>
+                   </table>
+                      </div> 
+               
+               <%}}}%>              
+
             </div>
-            </div>
-            <%}}}%>                        
+
+                      
         
         
     </body>

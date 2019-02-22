@@ -52,5 +52,19 @@ public class Funcionario {
         return R;
     }
     
-    
+       public ArrayList<GSFuncionario> Consultar_f(String ced){
+    ArrayList<GSFuncionario> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from funcionario where cedula_funcionario='"+ced+"'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                
+                GSFuncionario CF = new GSFuncionario(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
+                R.add(CF);
+                
+            }
+        } catch (Exception e) {
+        }
+        return R;
+    }
 }

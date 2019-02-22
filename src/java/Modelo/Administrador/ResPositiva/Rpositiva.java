@@ -55,15 +55,16 @@ public class Rpositiva {
     }
     return x;   
     }
-     public  ArrayList<GSFuncionario> Consultar_encargado(String en){
+     public  ArrayList<GSFuncionario> Consultar_encargado(String enc){
          ArrayList<GSFuncionario> f= new ArrayList<>();
          try{
-             ps=cnn.prepareStatement("select * funcionario WHERE cedula_funcionario='"+en+"'");
+             ps=cnn.prepareStatement("select * funcionario WHERE cedula_funcionario='"+enc+"'");
              res=ps.executeQuery();
              while(res.next()){
-                 GSFuncionario cf=new GSFuncionario(res.getString(1),res.getString(2),res.getString(3),res.getString(4));
+                 GSFuncionario cf=new GSFuncionario(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
                  f.add(cf);
              }
+             JOptionPane.showMessageDialog(null, f);
          }catch(Exception e){
              
          }
