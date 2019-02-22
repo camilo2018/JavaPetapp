@@ -20,7 +20,7 @@ public class Respuesta {
             ps=cnn.prepareStatement("Select * from respuestausuario");
             res=ps.executeQuery();
             while (res.next()) {
-                GSRespuesta CF = new GSRespuesta(res.getInt(1),res.getString(2),res.getString(3));
+                GSRespuesta CF = new GSRespuesta(res.getString(1),res.getInt(2),res.getString(3),res.getString(4),res.getString(5));
                 R.add(CF);
             }
         } catch (Exception e) {
@@ -34,7 +34,7 @@ public class Respuesta {
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSRespuesta CF = new GSRespuesta(res.getInt(1),res.getString(2),res.getString(3));
+                GSRespuesta CF = new GSRespuesta(res.getString(1),res.getInt(2),res.getString(3),res.getString(4),res.getString(5));
                 R.add(CF);
                 
                 

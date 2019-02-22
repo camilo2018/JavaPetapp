@@ -111,7 +111,7 @@
                         </tr>
                     <tr>
                     
-                <form method='POST' action='../ResAdopcion/Respositiva.jsp'>
+                <form method='POST' action='../ResAdopcion/Respositiva1.jsp'>
                     <input type='hidden' name='codigo' value='<%=cgsc.getCodp()%>'>
                     <input type='hidden' name='telefono' value='<%=cgsc.getTel()%>'>
                     <input type='hidden' name='direccion' value='<%=cgsc.getDir()%>'>

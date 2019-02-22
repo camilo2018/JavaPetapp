@@ -1,18 +1,43 @@
 package Modelo.Respuesta;
 
 public class GSRespuesta {
-    
+   private String fot;
    private int cod;
    private String ced;
    private String men;
+   private String enc;
 
-    public GSRespuesta(int cod, String ced, String men) {
+    public GSRespuesta(String fot, int cod, String ced, String men, String enc) {
+        this.fot = fot;
         this.cod = cod;
         this.ced = ced;
         this.men = men;
+        this.enc = enc;
     }
 
     public GSRespuesta() {
+    }
+    
+
+    public GSRespuesta(String fot, String ced, String men, String enc) {
+        this.fot = fot;
+        this.ced = ced;
+        this.men = men;
+        this.enc = enc;
+    }
+
+    public GSRespuesta(String ced, String men, String enc) {
+        this.ced = ced;
+        this.men = men;
+        this.enc = enc;
+    }
+
+    public String getFot() {
+        return fot;
+    }
+
+    public void setFot(String fot) {
+        this.fot = fot;
     }
 
     public int getCod() {
@@ -39,6 +64,15 @@ public class GSRespuesta {
         this.men = men;
     }
 
+    public String getEnc() {
+        return enc;
+    }
+
+    public void setEnc(String enc) {
+        this.enc = enc;
+    }
+
+   
     
    
 }
