@@ -86,8 +86,8 @@ public class ServletRespuesta extends HttpServlet {
         else{
             JOptionPane.showMessageDialog(null, "Preguntas");
             HttpSession htt=request.getSession();
-            String dato2= new String(ced);
-            htt.setAttribute("ced1", dato2);
+            String dato= new String(dat2);
+            htt.setAttribute("nom1", dato);
             Integer dato3= new Integer(ani);
             htt.setAttribute("ani1", dato3);
             response.sendRedirect("Ciudadano/Preguntas/Pagina1.jsp");

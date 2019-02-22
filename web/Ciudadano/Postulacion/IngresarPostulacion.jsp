@@ -1,3 +1,6 @@
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +21,7 @@
         
         <%
             HttpSession ht = request.getSession();
-            String ced=(String)ht.getAttribute("ced1");
+            String datd=(String)ht.getAttribute("nom1");
             Integer ani=(Integer)ht.getAttribute("ani1");
             Integer res=(Integer)ht.getAttribute("res1");
         %>
@@ -78,8 +81,18 @@
 
    <input type="text" name="coda" value="<%=ani%>" class="form-control">
    <input type="text" name="rpuntaje" value="<%=res%>" class="form-control">
-   <input type="text" name="cedula" value="<%=ced%>" class="form-control">
-      <div class="form-group" id="bot">
+   <%
+   ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
+            Ciudadano cores = new Ciudadano();
+            dares=cores.Consultar1(datd);
+            GSCiudadanoAdmin cgscres= new GSCiudadanoAdmin();
+
+            for (int ire = 0; ire < dares.size() ; ire++) {
+            cgscres=dares.get(ire);
+   %>
+   <input type="text" name="cedula" value="<%=cgscres.getCed()%>" class="form-control">
+   <%}%>   
+    <div class="form-group" id="bot">
       <input type="submit" name="ingpostu" value="Realizar Postulacion1" class="btn btn-primary">
       </div>
      
