@@ -4,6 +4,8 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
 <%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
 <%@page import="java.util.ArrayList"%>
@@ -26,7 +28,8 @@
 
 <body id="fondox">
     
-    <%
+  
+                  <%
         HttpSession ht = request.getSession();
         String dat2=(String)ht.getAttribute("nom1");
         %>
@@ -38,7 +41,6 @@
                 for (int i = 0; i < datc1.size() ; i++) {
                         cgsc=datc1.get(i);
                 %>
-                
             
         <div class="container-fluid">
 	<div class="row">
@@ -103,7 +105,15 @@
 		</div>
 	</div>
 </div> 
-     
+        <%
+                ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
+                Ciudadano co = new Ciudadano();
+                dat=co.Consultar1(dat2);
+                GSCiudadanoAdmin cgsc1= new GSCiudadanoAdmin();
+                
+                for (int i = 0; i < dat.size() ; i++) {
+                        cgsc1=dat.get(i);
+                %>
 <div id="padre">
 	<div id="insertar" class="form-group">
 	<h1>Realizar Denuncia</h1>
@@ -115,7 +125,7 @@
                 <option value="Maltrato">Maltrato</option>
                 <option value="Abandono">Abandono</option>
     </select>
-    <label>Cedula del Denunciante</label><input type="text" name="cedula" required="" class="form-control">
+        <input type="hidden" name="cedula" value='<%=cgsc1.getCed()%>' required="" class="form-control">
     <label>Denuncia</label><input type="text" name="denuncia" required="" class="form-control">
     <label>Evidencia</label><br><input id="inp" type="file" name="IMG" >
       <div class="form-group" id="bot">
@@ -124,6 +134,6 @@
     </form>
 </div>
 </div>
-
+ <%}%>
 </body>
 </html>

@@ -45,6 +45,7 @@
         %>
  	<label>Respuesta </label><input type="text" name="denres" required="" class="form-control">
 <input type="hidden" name="cedul" value="<%=ced%>" class="form-control">
+<input type="text" name="encargado" class="">
 
       <div class="form-group" id="bot">
       <input type="submit" name="denresp" value="Enviar Respuesta" class="btn btn-primary">
