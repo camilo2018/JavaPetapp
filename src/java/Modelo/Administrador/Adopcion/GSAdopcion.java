@@ -3,26 +3,39 @@ package Modelo.Administrador.Adopcion;
 
 public class GSAdopcion {
 
-    
+    private String icon;
     private int codap;
     private int ani;
     private String ced;
+    private String doc;
     private String men;
 
-    public GSAdopcion(int codap, int ani, String ced, String men) {
+    public GSAdopcion(String icon, int codap, int ani, String ced, String doc, String men) {
+        this.icon = icon;
         this.codap = codap;
         this.ani = ani;
         this.ced = ced;
+        this.doc = doc;
         this.men = men;
     }
 
-    public GSAdopcion(int ani, String ced, String men) {
+    public GSAdopcion(String icon, int ani, String ced, String doc, String men) {
+        this.icon = icon;
         this.ani = ani;
         this.ced = ced;
+        this.doc = doc;
         this.men = men;
     }
 
     public GSAdopcion() {
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public int getCodap() {
@@ -49,6 +62,14 @@ public class GSAdopcion {
         this.ced = ced;
     }
 
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
+    }
+
     public String getMen() {
         return men;
     }
@@ -56,6 +77,6 @@ public class GSAdopcion {
     public void setMen(String men) {
         this.men = men;
     }
-    
+
     
 }

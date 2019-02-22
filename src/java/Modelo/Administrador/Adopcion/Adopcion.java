@@ -22,7 +22,7 @@ public class Adopcion {
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSAdopcion CF = new GSAdopcion(res.getInt(1),res.getInt(2),res.getString(3),res.getString(4));
+                GSAdopcion CF = new GSAdopcion(res.getString(1),res.getInt(2),res.getInt(3),res.getString(4),res.getString(5),res.getString(6));
                 R.add(CF);
                 
                 
@@ -34,11 +34,12 @@ public class Adopcion {
     
     public void Ingresar_adop(GSAdopcion ing){
         try{
-            ps=cnn.prepareStatement("insert into adopcion (animal,cedula,mensaje) values(?,?,?)");
-    
-            ps.setInt(1,ing.getAni());
-            ps.setString(2,ing.getCed());
-            ps.setString(3,ing.getMen());
+            ps=cnn.prepareStatement("insert into adopcion (icono,animal,cedula,funcionario_encargado,mensaje) values(?,?,?,?,?)");
+            ps.setString(1,ing.getIcon());
+            ps.setInt(2,ing.getAni());
+            ps.setString(3,ing.getCed());
+            ps.setString(4,ing.getDoc());
+            ps.setString(5,ing.getMen());
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null,"Proceso Finalizado Correctamente");
         
