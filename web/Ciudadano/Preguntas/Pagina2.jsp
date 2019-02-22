@@ -20,8 +20,12 @@
   </head>
   <body>
         <%
-            String ced=request.getParameter("cedu");
-            String ani=request.getParameter("code");
+            HttpSession ht = request.getSession();
+            String datd=(String)ht.getAttribute("nom1");
+            Integer ani=(Integer)ht.getAttribute("ani1");
+        %>
+        <p>usu</p><%=datd%>
+        <%
             String dat1=request.getParameter("res1");
             String dat2=request.getParameter("res2");
             String dat3=request.getParameter("res3");
@@ -29,7 +33,6 @@
             String dat5=request.getParameter("res5");
             String dat6=request.getParameter("res6");
         %>
-        <p>ced</p><%=ced%>
         <p>ani</p><%=ani%>
         <p>res1</p><%=dat1%>
         <p>res2</p><%=dat2%>
@@ -128,15 +131,23 @@
                                     </fieldset>
                                 </div>
 			</div>
-                    <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
-                        <input type='hidden' name='cedu' value='<%=ced%>'>
-                        <input type='hidden' name='code' value='<%=ani%>'>
+                    <input type='submit' name='sigui2' value='Siguiente' class='btn btn-primary active btn-sm'>
                         <input type='hidden' name='res1' value='<%=dat1%>'>
                         <input type='hidden' name='res2' value='<%=dat2%>'>
                         <input type='hidden' name='res3' value='<%=dat3%>'>
                         <input type='hidden' name='res4' value='<%=dat4%>'>
                         <input type='hidden' name='res5' value='<%=dat5%>'>
                         <input type='hidden' name='res6' value='<%=dat6%>'>
+                        <%
+                        if (request.getParameter("sigui2")!=null) {
+                        HttpSession htt=request.getSession();
+                        String dato= new String(datd);
+                        htt.setAttribute("nom1", dato);
+                        Integer dato3= new Integer(ani);
+                        htt.setAttribute("ani1", dato3);
+                        response.sendRedirect("Pagina3.jsp");
+                        }
+                        %>
                     </form>
                     <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
                 </div>

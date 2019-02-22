@@ -73,6 +73,8 @@ public class ServletRespuesta extends HttpServlet {
             HttpSession htt=request.getSession();
             Integer dato1= new Integer(res);
             htt.setAttribute("res1", dato1);
+            String dato= new String(dat2);
+            htt.setAttribute("nom1", dato);
             String dato2= new String(ced);
             htt.setAttribute("ced1", dato2);
             Integer dato3= new Integer(ani);

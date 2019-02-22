@@ -77,8 +77,8 @@
            
 
    <input type="text" name="coda" value="<%=ani%>" class="form-control">
-   <input type="text" name="punt" value="<%=res%>" class="form-control">
-   <input type="text" name="cedu" value="<%=ced%>" class="form-control">
+   <input type="text" name="rpuntaje" value="<%=res%>" class="form-control">
+   <input type="text" name="cedula" value="<%=ced%>" class="form-control">
       <div class="form-group" id="bot">
       <input type="submit" name="ingpostu" value="Realizar Postulacion1" class="btn btn-primary">
       </div>

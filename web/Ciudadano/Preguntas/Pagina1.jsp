@@ -17,10 +17,10 @@
 <body>
         <%
             HttpSession ht = request.getSession();
-            String ced=(String)ht.getAttribute("ced1");
+            String datd=(String)ht.getAttribute("nom1");
             Integer ani=(Integer)ht.getAttribute("ani1");
         %>
-        <p>ced</p><%=ced%>
+        <p>usu</p><%=datd%>
         <p>ani</p><%=ani%>
     <div class="container-fluid">
 	<div class="row">
@@ -114,9 +114,16 @@
                                 </div>
 			</div>
                     <input type='submit' name='sigui' value='Siguiente' class='btn btn-primary active btn-sm'>
-                    <input type='hidden' name='cedu' value='<%=ced%>'>
-                    <input type='hidden' name='code' value='<%=ani%>'>
-                        
+                        <%
+                        if (request.getParameter("sigui")!=null) {
+                        HttpSession htt=request.getSession();
+                        String dato= new String(datd);
+                        htt.setAttribute("nom1", dato);
+                        Integer dato3= new Integer(ani);
+                        htt.setAttribute("ani1", dato3);
+                        response.sendRedirect("Pagina2.jsp");
+                        }
+                        %>
                         </form>
                     <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
                 </div>

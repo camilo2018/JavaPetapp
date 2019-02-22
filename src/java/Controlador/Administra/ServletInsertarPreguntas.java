@@ -5,11 +5,14 @@
  */
 package Controlador.Administra;
 
+import Modelo.Administrador.Ciudadano.Ciudadano;
+import Modelo.Administrador.Ciudadano.GSCiudadanoAdmin;
 import Modelo.Preguntas.GSRespuestaFin;
 import Modelo.Preguntas.GSRespuestas;
 import Modelo.Preguntas.InsertarRespuesta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,9 +51,19 @@ public class ServletInsertarPreguntas extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+            
+            HttpSession ht = request.getSession();
+            String datd=(String)ht.getAttribute("nom1");
+            Integer ani=(Integer)ht.getAttribute("ani1");
+            
+            ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
+            Ciudadano cores = new Ciudadano();
+            dares=cores.Consultar1(datd);
+            GSCiudadanoAdmin cgscres= new GSCiudadanoAdmin();
+
+            for (int ire = 0; ire < dares.size() ; ire++) {
+            cgscres=dares.get(ire);
         
-            String ced=request.getParameter("cedu");
-            JOptionPane.showMessageDialog(null, ced);
             int r1=Integer.parseInt(request.getParameter("res1"));
             int r2=Integer.parseInt(request.getParameter("res2"));
             int r3=Integer.parseInt(request.getParameter("res3"));
@@ -73,24 +86,25 @@ public class ServletInsertarPreguntas extends HttpServlet {
             int r20=Integer.parseInt(request.getParameter("res20"));
             int rt=r1+r2+r3+r4+r5+r6+r7+r8+r9+r10+r11+r12+r13+r14+r15+r16+r17+r18+r19+r20;
    
-        GSRespuestas con=new GSRespuestas(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, ced);
-        InsertarRespuesta in=new InsertarRespuesta();
-        in.Respuestas(con);
-        GSRespuestaFin con1=new GSRespuestaFin(ced,rt);
-        InsertarRespuesta in1=new InsertarRespuesta();
-        in1.RespuestaFin(con1);
             
+            GSRespuestas con=new GSRespuestas(r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,cgscres.getCed());
+            InsertarRespuesta in=new InsertarRespuesta();
+            in.Respuestas(con);
+            GSRespuestaFin con1=new GSRespuestaFin(cgscres.getCed(),rt);
+            InsertarRespuesta in1=new InsertarRespuesta();
+            in1.RespuestaFin(con1);
+
             HttpSession htt=request.getSession();
-            String c=request.getParameter("cedu");
-            int a=Integer.parseInt(request.getParameter("code"));
             Integer re= new Integer(rt);
-            Integer an= new Integer(a);
-            String ce= new String(c);
+            Integer an= new Integer(ani);
+            String ce= new String(cgscres.getCed());
             htt.setAttribute("ced1", ce);
             htt.setAttribute("ani1", an);
             htt.setAttribute("res1", re);
+            }
             response.sendRedirect("Ciudadano/Postulacion/IngresarPostulacion.jsp");
-
+            
+            
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

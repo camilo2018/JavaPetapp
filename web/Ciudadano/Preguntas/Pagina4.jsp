@@ -20,8 +20,12 @@
   </head>
   <body>
         <%
-            String ced=request.getParameter("cedu");
-            String ani=request.getParameter("code");
+            HttpSession ht = request.getSession();
+            String datd=(String)ht.getAttribute("nom1");
+            Integer ani=(Integer)ht.getAttribute("ani1");
+        %>
+        <p>usu</p><%=datd%>
+        <%
             String dat1=request.getParameter("res1");
             String dat2=request.getParameter("res2");
             String dat3=request.getParameter("res3");
@@ -41,7 +45,6 @@
             String dat17=request.getParameter("res17");
             String dat18=request.getParameter("res18");
         %>
-        <p>ced</p><%=ced%>
         <p>ani</p><%=ani%>
         <p>res1</p><%=dat1%>
         <p>res2</p><%=dat2%>
@@ -98,8 +101,6 @@
                                 </div>
 			</div>
                     <input type='submit' name='fin' value='Finalizar' class='btn btn-primary active btn-sm'>
-                    <input type='hidden' name='cedu' value='<%=ced%>'>
-                    <input type='hidden' name='code' value='<%=ani%>'>
                     <input type='hidden' name='res1' value='<%=dat1%>'>
                     <input type='hidden' name='res2' value='<%=dat2%>'>
                     <input type='hidden' name='res3' value='<%=dat3%>'>
@@ -118,7 +119,15 @@
                     <input type='hidden' name='res16' value='<%=dat16%>'>
                     <input type='hidden' name='res17' value='<%=dat17%>'>
                     <input type='hidden' name='res18' value='<%=dat18%>'>
-                    
+                    <%
+                        if (request.getParameter("fin")!=null) {
+                        HttpSession htt=request.getSession();
+                        String dato= new String(datd);
+                        htt.setAttribute("nom1", dato);
+                        Integer dato3= new Integer(ani);
+                        htt.setAttribute("ani1", dato3);
+                        }
+                    %>
                     </form>
                     <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
                 </div>
