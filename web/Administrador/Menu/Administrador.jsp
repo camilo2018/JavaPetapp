@@ -88,18 +88,7 @@
     </div> 
   </form>
 
-<form action="../../Administrador/Comentarios/Consultar_Comentario.jsp">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Comentarios</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Comentarios" src="Imagenes1/Comentarios.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div>
-  </form>
+
 
 <form action="../Denuncia/Consultar_Denuncia.jsp">
 <div class="col-sm-4 col-xs-12">
@@ -154,31 +143,7 @@
     </div>
   </form>
 
-<form action="../Postulacion/Consultar_Postulacion.jsp">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Postulacion</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Eventos" src="Imagenes1/Postulacion.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div>
-    </form>  
 
-<form action="../Seguimiento/Continuar_Postulacion.jsp">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano"> 
-        <div class="panel-heading" id="verde">
-          <h1>Seguimiento</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Eventos" src="Imagenes1/Seguimiento.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div> 
-  </form>
 
 <form action="../Usuarios/usuarios.jsp">
 <div class="col-sm-4 col-xs-12">

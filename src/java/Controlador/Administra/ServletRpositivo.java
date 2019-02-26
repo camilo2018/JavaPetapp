@@ -67,7 +67,7 @@ public class ServletRpositivo extends HttpServlet {
         GSAdopcion con3=new GSAdopcion(fot,coda,ce,doc,men);
         Adopcion in3=new Adopcion();
         in3.Ingresar_adop(con3);
-        response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");
+        response.sendRedirect("Funcionario/Seguimiento/Continuar_Postulacion.jsp");
     }
   
     protected void IngresarRespuestad(HttpServletRequest request, HttpServletResponse response)
@@ -83,7 +83,7 @@ public class ServletRpositivo extends HttpServlet {
         GSRespositiva con=new GSRespositiva(fot,ce, men,doc);
         Rpositiva in=new Rpositiva();
         in.Ingresar_Positiva(con);
-        response.sendRedirect("Administrador/ResDenuncia/Respositiva.jsp");
+        response.sendRedirect("Funcionario/ResDenuncia/Respositiva.jsp");
 
         
         

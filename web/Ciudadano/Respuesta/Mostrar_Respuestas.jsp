@@ -148,10 +148,6 @@
                         <th><%=res2.getCod()%></th>
                         </tr>
                         <tr>
-                        <th>Cedula</th>
-                        <th><%=res2.getCed()%></th>
-                        </tr>
-                        <tr>
                         <tr>
                         <th>Mensaje</th>            
                         <th><%=res2.getMen()%></th>

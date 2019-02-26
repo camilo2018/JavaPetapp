@@ -76,21 +76,8 @@
       </div>      
     </div> 
   </form>
-
-<form action="../../Comentarios/Vista/Vista_Comentarios.php">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Comentarios</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Comentarios" src="Imagenes/Comentarios.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div>
-  </form>
-
-<form action="../../Denuncias/Vista/Vista_Denuncias.php">
+            
+<form action="../../Funcionario/Denuncia/Consultar_Denuncia.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -103,7 +90,7 @@
     </div>
   </form>
 
-<form action="../../Eventos/Vista/Vista_Eventos.php">
+<form action="../../Funcionario/Evento/Consultar_Evento.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -120,7 +107,7 @@
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
-          <h1>Funcionario</h1>
+          <h1>Perfil</h1>
         </div>
         <div class="panel-body"><center>
           <input type="image" name="Adopcion" src="Imagenes/Funcionario.png" class="img-responsive slideanim" id="logoimagen"></center>
@@ -128,21 +115,8 @@
       </div>      
     </div>
   </form>
-
-<form action="../../Mascotas/Vista/Vista_Mascotas.php">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Mascotas</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Mascotas" src="Imagenes/Mascotas.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div>
-  </form>
-
-<form action="../../Postulacion/Vista/Vista_Postulacion.php">
+            
+<form action="../Postulacion/Consultar_Postulacion.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -155,7 +129,7 @@
     </div>
     </form>  
 
-<form action="../../Seguimiento/Vista/Vista_Seguimiento.php">
+<form action="../Seguimiento/Continuar_Postulacion.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano"> 
         <div class="panel-heading" id="verde">

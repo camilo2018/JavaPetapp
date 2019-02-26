@@ -4,6 +4,7 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Seguimiento.GSSeguimientoAdmin"%>
 <%@page import="Modelo.Administrador.Postulacion.Postulacion"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Administrador.Postulacion.GSPostulacionAdmin"%>
@@ -11,10 +12,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <title>Postulacion</title>
+       <title>Seguimiento</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/EstiloIngresoPostulacion1.css">
+        <link rel="stylesheet" href="CSS/Estilo1.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   	<script src="JQ/jquery-3.3.1.min.js"></script>
         <script src="JQ/main.js"></script>
@@ -24,12 +25,14 @@
 	<form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <h3 class="display-4">Postulacion</h3>
+        
+    
+    <h3 class="display-4">Seguimiento</h3>
     	        <%
-                ArrayList<GSPostulacionAdmin> dat = new ArrayList<>();
+                ArrayList<GSSeguimientoAdmin> dat = new ArrayList<>();
                 Postulacion co = new Postulacion();
-                dat=co.ConsultaAdmin();
-                GSPostulacionAdmin cgsc= new GSPostulacionAdmin();
+                dat=co.Consultapos();
+                GSSeguimientoAdmin cgsc= new GSSeguimientoAdmin();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
                 %>
@@ -38,7 +41,7 @@
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc.getCod()%></th>
+                    <th><%=cgsc.getCodp()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -47,8 +50,12 @@
                 <div class="caja2">
                     <table class="table">
                         <tr>
-                        <th>Codigo</th>
+                        <th>Codigo del Seguimiento</th>
                         <th><%=cgsc.getCod()%></th>
+                        </tr>
+                        <tr>
+                        <th>Codigo de Postulacion</th>
+                        <th><%=cgsc.getCodp()%></th>
                         </tr>
                         <tr>
                         <th>Telefono</th>
@@ -63,36 +70,36 @@
                         <th><%=cgsc.getFij()%></th>
                         </tr>
                         <tr>
-                        <th>Certificado</th>
-                        <th><a href="../../Certifcados/"<%=cgsc.getCer()%>></a></th>
+                        <th>Certificado Laboral</th>
+                        <th><%=cgsc.getCer()%></th>
                         </tr>
                         <tr>
-                        <th>Fotocopia Cedula</th>
+                        <th>Fotocopia de Cedula</th>
                         <th><%=cgsc.getCpf()%></th>
                         </tr>
                         <tr>
-                         <th>Estrato</th>
-                         <th><%=cgsc.getEst()%></th>
+                        <th>Estrato</th>
+                        <th><%=cgsc.getEst()%></th>
                         </tr>
                         <tr>
-                          <th>Cantidad de Residentes</th>
-                          <th><%=cgsc.getResi()%></th>
+                        <th>Residentes</th>
+                        <th><%=cgsc.getResi()%></th>
                         </tr>
                         <tr>
-                        <th>Ubicacion de Vivienda</th>
-                        <th><%=cgsc.getUbi()%></th>
+                        <th>Ubicacion de la Vivienda</th>
+                        <th><%=cgsc.getUbi()%></th>    
                         </tr>
                         <tr>
-                         <th>Tipo de Vivienda</th>
-                         <th><%=cgsc.getTvi()%></th>
+                        <th>Tipo de Vivienda</th>
+                        <th><%=cgsc.getTvi()%></th>
                         </tr>
                         <tr>
-                            <th>Puntaje</th>
-                            <th><%=cgsc.getRpun()%>/20</th>
+                        <th>Puntaje</th>
+                        <th><%=cgsc.getRpun()%>/20</th>
                         </tr>
                         <tr>
-                            <th>Recibo Publico</th>
-                            <th><%=cgsc.getReci()%></th>
+                        <th>Recibo Publico</th>
+                        <th><%=cgsc.getReci()%></th>
                         </tr>
                         <tr>
                         <th>Cedula</th>
@@ -104,27 +111,19 @@
                         </tr>
                     <tr>
                     
-                <form method='POST' action='../../ServletSeguimiento' enctype="multipart/form-data">
-                    <input type='hidden' name='codigo' value='<%=cgsc.getCod()%>'>
+                <form method='POST' action='../ResAdopcion/Respositiva1.jsp'>
+                    <input type='hidden' name='codigo' value='<%=cgsc.getCodp()%>'>
                     <input type='hidden' name='telefono' value='<%=cgsc.getTel()%>'>
                     <input type='hidden' name='direccion' value='<%=cgsc.getDir()%>'>
                     <input type='hidden' name='fijo' value='<%=cgsc.getFij()%>'>
-                    <input type='hidden' name='cerp' value='<%=cgsc.getCer()%>'>
-                    <input type='hidden' name='cpf' value='<%=cgsc.getCpf()%>'>
-                    <input type='hidden' name='est' value='<%=cgsc.getEst()%>'>
-                    <input type='hidden' name='resi' value='<%=cgsc.getResi()%>'>
-                    <input type='hidden' name='ubi' value='<%=cgsc.getUbi()%>'>
-                    <input type='hidden' name='tvi' value='<%=cgsc.getTvi()%>'>
-                    <input type='hidden' name='repun' value='<%=cgsc.getRpun()%>'>
-                    <input type='hidden' name='rpub' value='<%=cgsc.getReci()%>'>
                     <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
                     <input type='hidden' name='animal' value='<%=cgsc.getCoda()%>'>
-                    <th><input type='submit' name='seguimien' value='Seguimiento' class='btn btn-info' ></th>
+                    <th><input type='submit' name='respa' value='Aceptar' class='btn btn-info' ></th>
                 </form>
             
                 <form method='POST' action=''>
                     <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
+                    <th><input type='submit' name='eliminar' value='Rechazar' class='btn btn-danger'></th>
                 </form>
                 
                 

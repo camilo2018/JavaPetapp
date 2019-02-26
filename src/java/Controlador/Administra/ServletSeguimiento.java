@@ -74,7 +74,7 @@ public class ServletSeguimiento extends HttpServlet {
         GSSeguimientoAdmin con=new GSSeguimientoAdmin(codp,tel,dir,fij,cer,cpf,est,resi,ubi,tvi,rpun,rpub,ced,coda);
         Seguimiento in=new Seguimiento();
         in.Ingresar_segui(con);
-        response.sendRedirect("Administrador/Seguimiento/Continuar_Postulacion.jsp");
+        response.sendRedirect("Funcionario/Seguimiento/Continuar_Postulacion.jsp");
 
  }
      

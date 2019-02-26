@@ -118,7 +118,7 @@ private int r;
             }
             else if(r==2){
             JOptionPane.showMessageDialog(null, "Funcionario");
-            response.sendRedirect("Funcionario/Menu/Vista/Funcionario.jsp");    
+            response.sendRedirect("Funcionario/Menu/Funcionario.jsp");    
             }
             else if(r==3){
             JOptionPane.showMessageDialog(null, "Veterinaria");

@@ -4,6 +4,9 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Denuncia.Denuncia"%>
+<%@page import="Modelo.Administrador.Denuncia.GSDenunciaAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,15 +21,9 @@
         
 </head>
     <body>
-        <form action="IngresarDenuncia_Adm.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
-  	</form>
-
-    
-	<form action="../Menu/Administrador.jsp">
+	<form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Denuncia</h3>
     	        <%
                 ArrayList<GSDenunciaAdmin> dat = new ArrayList<>();
@@ -74,14 +71,14 @@
                         <th><img src="../<%=cgsc.getFot()%>" width="100" height="100"></th>
                         </tr>
                         
-               <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+               <form method='POST' action='../ResDenuncia/Respositiva.jsp'>
+               <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
+                    <th><input type='submit' name='acep' value='Aceptar' class='btn btn-info' ></th>
                 </form>
             
                 <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
+              
+                    <th><input type='submit' name='eliminar' value='Rechazar' class='btn btn-danger'></th>
                 </form>
                 
                 
