@@ -13,6 +13,12 @@ public class GSUsuario {
         this.fot = fot;
     }
 
+    public GSUsuario(String nom, String cla, String fot) {
+        this.nom = nom;
+        this.cla = cla;
+        this.fot = fot;
+    }
+
     public GSUsuario() {
     }
 
