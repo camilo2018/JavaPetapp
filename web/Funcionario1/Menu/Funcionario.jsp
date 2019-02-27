@@ -38,7 +38,7 @@
 
   
 
-  <form action="../../Funcionario/Adopciones/Consultar_Adopcion.jsp">
+  <form action="../Funcionario1/Adopciones/Consultar_Adopcion.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -51,7 +51,7 @@
     </div> 
   </form>
     
-    <form action="../../Funcionario/Animal/Consultar_Animal.jsp">
+    <form action="../Funcionario1/Animal/Consultar_Animal.jsp">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -64,7 +64,7 @@
     </div>
   </form>
 
-<form action="../../Funcionario/Ciudadano/Consultar_Ciudadano.jsp">
+<form action="../Funcionario1/Ciudadano/Consultar_Ciudadano.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -77,7 +77,7 @@
     </div> 
   </form>
             
-<form action="../../Funcionario/Denuncia/Consultar_Denuncia.jsp">
+<form action="../Funcionario1/Denuncia/Consultar_Denuncia.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -90,7 +90,7 @@
     </div>
   </form>
 
-<form action="../../Funcionario/Evento/Consultar_Evento.jsp">
+<form action="../Funcionario1/Evento/Consultar_Evento.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
