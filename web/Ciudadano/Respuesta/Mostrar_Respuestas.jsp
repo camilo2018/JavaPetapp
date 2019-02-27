@@ -153,10 +153,6 @@
                         </tr>
                         <tr>
                         <tr>
-                        <th>Encargado</th>
-                        <th><%=res2.getEnc()%></th>
-                        </tr>
-                        <tr>
                         <th>Mensaje</th>            
                         <th><%=res2.getMen()%></th>
                         </tr>
