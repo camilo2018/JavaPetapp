@@ -4,6 +4,9 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,22 +14,19 @@
         <title>Ciudadano</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/EstiloIngresoCiudadano.css">
+        <link rel="stylesheet" href="CSS/EstiloIngresoCiudadano1.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  	<script src="JQ/jquery-3.3.1.min.js"></script>
-        <script src="JQ/main.js"></script>
+  	<script src="JQ1/jquery-3.3.11.min.js"></script>
+        <script src="JQ1/main1.js"></script>
         
 </head>
     <body>
-        <form action="../Ciudadano/IngresarCiudadano_Adm.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
-  	</form>
-
-    
-	<form action="../Menu/Administrador.jsp">
+	<form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
+        <form action="IngresarCiudadano_Adm.jsp">
+            <input type="submit" name="nuevo" value="Insertar" id="nuevo" class="btn btn-outline-dark" >
+  	</form>
     <h3 class="display-4">Ciudadano</h3>
     	        <%
                 ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();

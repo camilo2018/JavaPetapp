@@ -25,6 +25,9 @@
         <form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
+         <form action="IngresarEvento_Adm.jsp">
+            <input type="submit" name="ing" value="Insertar" class="btn btn-outline-dark" id="vol">
+  	</form>
 
     <h3 class="display-4">Eventos</h3>
     	        <%

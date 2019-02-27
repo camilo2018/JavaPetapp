@@ -4,6 +4,9 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Animal.Animal"%>
+<%@page import="Modelo.Administrador.Animal.GSAnimalAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,14 +21,13 @@
         
 </head>
     <body>
-        <form action="IngresarAnimal_Adm.jsp">
+        <form action="IngresarAnimal_Admin.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
 
-	<form action="../Menu/Administrador.jsp">
+	<form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Animal</h3>
     	        <%
                 ArrayList<GSAnimalAdmin> dat = new ArrayList<>();
@@ -69,7 +71,8 @@
                         <th><%=cgsc.getRaz()%></th>
                         </tr>
                         <th>Foto</th>
-                        <th><img src="../<%=cgsc.getTam()%>" width="100" height="100"></th>
+                      
+                        <th><img src="../../Uploads/FotosAnimal/<%=cgsc.getTam()%>" width="100" height="100"></th>
                         </tr>
                         <th>Tamaño</th>
                         <th><%=cgsc.getGen()%></th>

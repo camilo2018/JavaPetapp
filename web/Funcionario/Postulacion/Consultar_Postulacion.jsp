@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   	<script src="JQ/jquery-3.3.1.min.js"></script>
         <script src="JQ/main.js"></script>
+        <script src="JQ/main1.js"></script>
         
 </head>
     <body>
@@ -64,11 +65,11 @@
                         </tr>
                         <tr>
                         <th>Certificado</th>
-                        <th><a href="../../Certifcados/"<%=cgsc.getCer()%>></a></th>
+                        <th><a href="../../<%=cgsc.getCer()%>"><%=cgsc.getCer()%></a></th>
                         </tr>
                         <tr>
                         <th>Fotocopia Cedula</th>
-                        <th><%=cgsc.getCpf()%></th>
+                        <th><a href="../../<%=cgsc.getCpf()%>"><%=cgsc.getCpf()%></a></th>
                         </tr>
                         <tr>
                          <th>Estrato</th>
@@ -92,7 +93,7 @@
                         </tr>
                         <tr>
                             <th>Recibo Publico</th>
-                            <th><%=cgsc.getReci()%></th>
+                            <th><a href="../../<%=cgsc.getReci()%>"><%=cgsc.getReci()%></a></th>
                         </tr>
                         <tr>
                         <th>Cedula</th>

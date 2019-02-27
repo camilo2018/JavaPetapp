@@ -38,7 +38,7 @@
 
   
 
-  <form action="../../Adopciones/Vista/Vista_Adopciones.php">
+  <form action="../../Funcionario/Adopciones/Consultar_Adopcion.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -51,7 +51,7 @@
     </div> 
   </form>
     
-    <form action="../../Animales/Vista/Vista_Animal.php">
+    <form action="../../Funcionario/Animal/Consultar_Animal.jsp">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -64,7 +64,7 @@
     </div>
   </form>
 
-<form action="../../Ciudadano/Vista/Vista_Ciudadano.php">
+<form action="../../Funcionario/Ciudadano/Consultar_Ciudadano.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">

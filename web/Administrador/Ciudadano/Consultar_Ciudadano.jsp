@@ -24,6 +24,9 @@
 	<form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
+        <form action="IngresarCiudadano_Adm.jsp">
+            <input type="submit" name="nuevo" value="Insertar" id="nuevo" class="btn btn-outline-dark" >
+  	</form>
     <h3 class="display-4">Ciudadano</h3>
     	        <%
                 ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();

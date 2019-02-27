@@ -1,6 +1,4 @@
-
 #centro{
-    margin-top: 100px;
     background-color: transparent;
     padding: 0 1rem;
     margin: 1rem;
@@ -31,7 +29,11 @@
     margin-bottom:60px;
 }
 
-
+#vol{
+float: left;
+margin-top: 5px;
+margin-bottom:50px;
+}
 
 #sal{
 float: right;
@@ -86,7 +88,6 @@ p{
 }
     #vol{
     float: left;
-    margin-left: -72px;
     margin-top: 5px;
     }
 }

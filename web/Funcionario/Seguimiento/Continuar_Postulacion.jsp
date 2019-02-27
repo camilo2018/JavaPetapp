@@ -71,11 +71,11 @@
                         </tr>
                         <tr>
                         <th>Certificado Laboral</th>
-                        <th><%=cgsc.getCer()%></th>
+                        <th><a href="../../<%=cgsc.getCer()%>"><%=cgsc.getCer()%></a></th>
                         </tr>
                         <tr>
                         <th>Fotocopia de Cedula</th>
-                        <th><%=cgsc.getCpf()%></th>
+                        <<th><a href="../../<%=cgsc.getCpf()%>"><%=cgsc.getCpf()%></a></th>
                         </tr>
                         <tr>
                         <th>Estrato</th>
@@ -99,7 +99,7 @@
                         </tr>
                         <tr>
                         <th>Recibo Publico</th>
-                        <th><%=cgsc.getReci()%></th>
+                        <th><a href="../../<%=cgsc.getReci()%>"><%=cgsc.getReci()%></a></th>
                         </tr>
                         <tr>
                         <th>Cedula</th>
