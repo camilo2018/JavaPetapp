@@ -7,13 +7,20 @@ package Controlador.Administra;
 
 import Modelo.Administrador.Admin.Admin;
 import Modelo.Administrador.Admin.GSAdminAdmin;
+import Modelo.Usuario.GSUsuario;
+import Modelo.Usuario.Usuario;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +28,7 @@ import javax.swing.JOptionPane;
  * @author SENA
  */
 @WebServlet(name = "ServletModificarAdmin", urlPatterns = {"/ServletModificarAdmin"})
+@MultipartConfig
 public class ServletModificarAdmin extends HttpServlet {
 
     /**
@@ -36,30 +44,73 @@ public class ServletModificarAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
+           
+        if(request.getParameter("BTN") !=null){
+                this.Modificar(request, response);
+        }
             
-            String nom,cla;
-        int x;
         
-        nom=request.getParameter("nom1");
-        cla=request.getParameter("cla1");
-        
-        
-        GSAdminAdmin gs = new GSAdminAdmin(nom, cla);
-        Admin ad = new Admin();
-        x=ad.Actualizar(gs);
-        
-        if (x>0) {
-            JOptionPane.showMessageDialog(null, "Datos Actualizados");
-        }
-        
-        else{
-            JOptionPane.showMessageDialog(null, "Datos no Actualizados");
-        }
-        
-        request.getRequestDispatcher("Administrador/Admin/Modificar_Admin.jsp").forward(request, response);
     }
     
-
+    protected void Modificar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            
+            
+        String nom,cla,fotosi;
+        int x;
+        
+        nom=request.getParameter("usu");
+        cla=request.getParameter("clave");
+        fotosi=request.getParameter("fotosi");
+        Part fo= request.getPart("fo");
+        
+        if (fo!=null){
+            
+          String nomfoto=fo.getSubmittedFileName();
+          String nombre=nom;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
+          String Url2=nombre;
+          
+          InputStream file=fo.getInputStream();
+          File f=new File(Url);
+          FileOutputStream sal=new FileOutputStream(f);
+          int num=file.read();
+          while(num!= -1){
+              sal.write(num);
+              num=file.read();
+          }
+          
+            GSUsuario con2=new GSUsuario(nom,cla,Url2);
+            Usuario in2=new Usuario();
+            x=in2.Actualizar(con2);
+            
+            if(x>0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Datos No Fueron Actualizados");
+            }
+        }
+        else{
+            
+            GSUsuario con2=new GSUsuario(nom,cla,fotosi);
+            Usuario in2=new Usuario();
+            x=in2.Actualizar(con2);
+            
+            if(x>0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Datos No Fueron Actualizados");
+            }
+        }
+        response.sendRedirect("Administrador/Admin/Modificar_Admin.jsp");
+            
+    }
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

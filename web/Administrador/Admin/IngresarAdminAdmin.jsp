@@ -21,7 +21,7 @@
    </head> 
 
    
-<body id="fondox">
+   <body id="fondox">
 
 
     <form action="Consultar_Admin.jsp">

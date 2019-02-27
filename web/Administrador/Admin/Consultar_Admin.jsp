@@ -1,3 +1,5 @@
+<%@page import="Modelo.Usuario.GSUsuario"%>
+<%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Administrador.Admin.Admin"%>
 <%@page import="Modelo.Administrador.Admin.GSAdminAdmin"%>
 <%@page import="java.util.ArrayList"%>
@@ -27,10 +29,10 @@
         
     <h3 class="display-4">Administrador</h3>
     	        <%
-                ArrayList<GSAdminAdmin> dat = new ArrayList<>();
-                Admin co = new Admin();
-                dat=co.Consultar();
-                GSAdminAdmin cgsc= new GSAdminAdmin();
+                ArrayList<GSUsuario> dat = new ArrayList<>();
+                Usuario co = new Usuario();
+                dat=co.ConsultarA();
+                GSUsuario cgsc= new GSUsuario();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
                 %>
@@ -47,6 +49,9 @@
                 
                 <div class="caja2">
                     <table class="table">
+                        <tr>
+                        <th colspan='2'><img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" width="200" height="200"></th>
+                        </tr>
                         <tr>
                         <th>Usuario</th>
                         <th><%=cgsc.getNom()%></th>

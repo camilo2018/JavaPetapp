@@ -47,5 +47,33 @@ public class Usuario {
             }
             return R;
         }
-
+    
+    public ArrayList<GSUsuario> ConsultarA(){
+        ArrayList<GSUsuario> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login='1'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                
+                GSUsuario CF = new GSUsuario(res.getString(1),res.getString(2),res.getInt(3),res.getString(4));
+                R.add(CF);
+                
+                
+            }
+            } catch (Exception e) {
+            }
+            return R;
+        }
+    
+    public int Actualizar(GSUsuario AF){
+        int x=0;
+        try {
+            ps=cnn.prepareStatement("call login_usuariosact_admin_Admin('"+AF.getNom()+"','"+AF.getCla()+"','"+AF.getFot()+"')");
+            x=ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return x;
+    }
+    
 }
