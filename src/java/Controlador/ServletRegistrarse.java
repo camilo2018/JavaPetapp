@@ -67,7 +67,7 @@ public class ServletRegistrarse extends HttpServlet {
           String nombre=ced+usu;
           
           String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
-          
+
           String Url2=nombre;
           
           InputStream file=foto.getInputStream();
