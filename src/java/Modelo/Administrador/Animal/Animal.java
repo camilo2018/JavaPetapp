@@ -52,6 +52,22 @@ public class Animal {
         return R;
     }
     
+    public ArrayList<GSAnimalAdmin> Filtro(String fil){
+    ArrayList<GSAnimalAdmin> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from animal where raza_animal LIKE"+"'%"+fil+"%'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                
+                GSAnimalAdmin CF = new GSAnimalAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getString(8),res.getString(9));
+                
+                R.add(CF);
+            }
+        } catch (Exception e) {
+        }
+        return R;
+    }
+    
     public int EliminarAnimal(GSAnimalAdmin igs) {
         
     int x=0;

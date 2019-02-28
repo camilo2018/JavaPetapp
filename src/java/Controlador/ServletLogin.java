@@ -114,14 +114,26 @@ private int r;
         if((u.equals(us)) && (c.equals(co))){
             if(r==1){
             JOptionPane.showMessageDialog(null,"Administrador");
+            HttpSession htt=request.getSession();
+            String naom=request.getParameter("Usuario");
+            String dato= new String(naom);
+            htt.setAttribute("nomA", dato);
             response.sendRedirect("Administrador/Menu/Administrador.jsp");
             }
             else if(r==2){
             JOptionPane.showMessageDialog(null, "Funcionario");
+            HttpSession htt=request.getSession();
+            String naom=request.getParameter("Usuario");
+            String dato= new String(naom);
+            htt.setAttribute("nomF", dato);
             response.sendRedirect("Funcionario/Menu/Funcionario.jsp");    
             }
             else if(r==3){
             JOptionPane.showMessageDialog(null, "Veterinaria");
+            HttpSession htt=request.getSession();
+            String naom=request.getParameter("Usuario");
+            String dato= new String(naom);
+            htt.setAttribute("nomV", dato);
             response.sendRedirect("Veterinaria/Login/loginV.jsp");    
             }
             else if(r==4){

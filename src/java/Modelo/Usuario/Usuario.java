@@ -48,10 +48,10 @@ public class Usuario {
             return R;
         }
     
-    public ArrayList<GSUsuario> ConsultarA(){
+    public ArrayList<GSUsuario> ConsultarA(String a){
         ArrayList<GSUsuario> R = new ArrayList<>();
         try {
-            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login='1'");
+            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login='1'  and nombre_usuario <> '"+a+"'");
             res=ps.executeQuery();
             while (res.next()) {
                 

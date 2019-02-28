@@ -16,6 +16,10 @@
 	<title>PetApp</title>
 </head>
 <body>
+        <%
+        HttpSession ht = request.getSession();
+        String dat2=(String)ht.getAttribute("nomA");
+        %>
     <header id="encabezado">
     <form action="../../Login/inicio.jsp">
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
